@@ -1,5 +1,6 @@
 using UnityEngine;
-
+using System.Collections;
+using UnityEngine.InputSystem;
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 5f;
@@ -8,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     public DynamicCrosshair crosshair;
     public CharacterController controller;
     public Joystick joystick;
-
+    public Vector2 keyboardInput;
     public Transform groundCheck;
     public float groundDistance = 0.3f;
     public LayerMask groundMask;
@@ -27,8 +28,8 @@ public class PlayerMovement : MonoBehaviour
         }
 
         // Movement
-        float x = joystick.Horizontal;
-        float z = joystick.Vertical;
+        float x = joystick.Horizontal + keyboardInput.x;
+        float z = joystick.Vertical + keyboardInput.y;
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
@@ -45,5 +46,8 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
     }
-
+    public void OnMove(InputValue value)
+    {
+        keyboardInput = value.Get<Vector2>();
+    }
 }

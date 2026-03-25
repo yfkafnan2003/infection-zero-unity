@@ -6,16 +6,14 @@ public enum GunType
 {
     Pistol,
     Shotgun,
-    Machinegun,
-    Sniper
+    Machinegun
 }
 
 public enum AmmoType
 {
     Pistol,
     Shotgun,
-    Machinegun,
-    Sniper
+    Machinegun
 }
 
 public class Gun : MonoBehaviour
@@ -24,12 +22,21 @@ public class Gun : MonoBehaviour
     public string gunName;
     public GunType gunType;
     public AmmoType ammoType;
-
+    public Camera playerCamera;
+    public float shootDistance = 200f;
     public GameObject bulletPrefab;
     public Transform muzzle;
-
+    [Header("Muzzle Aim Fix")]
+    public Vector3 normalMuzzleRotationOffset;
+    public Vector3 aimMuzzleRotationOffset;
     float nextFireTime = 0f;
+    [Header("Recoil")]
+    public float recoilKick = 0.05f;
+    public float recoilRotation = 3f;
+    public float recoilRecoverSpeed = 10f;
 
+Vector3 recoilOffset;
+float recoilRot;
     [Header("Stats")]
     public float fireRate = 0.2f;
     public int damage = 20;
@@ -43,6 +50,10 @@ public class Gun : MonoBehaviour
     public int magazineSize = 30;
     public int currentAmmo;
     public int reserveAmmo = 90;
+
+    [Header("Animation")]
+    public Animator gunAnimator;
+    public AimSystem aimSystem;
 
     public TextMeshProUGUI ammoText;
 
@@ -67,9 +78,13 @@ public class Gun : MonoBehaviour
 
         UpdateAmmoUI();
     }
-
+    void Update()
+    {
+        RecoverRecoil();
+    }
     public void Shoot()
     {
+
         if(isReloading) return;
         if(Time.time < nextFireTime) return;
         if(currentAmmo <= 0) return;
@@ -77,9 +92,24 @@ public class Gun : MonoBehaviour
         nextFireTime = Time.time + fireRate;
 
         if(gunType == GunType.Shotgun)
+        {
             ShootShotgun();
+        }
         else
-            ShootBullet(muzzle.rotation);
+        {
+            Quaternion shootRotation = muzzle.rotation;
+
+            if(aimSystem != null && aimSystem.IsAiming())
+            {
+                shootRotation *= Quaternion.Euler(aimMuzzleRotationOffset);
+            }
+            else
+            {
+                shootRotation *= Quaternion.Euler(normalMuzzleRotationOffset);
+            }
+
+            ShootBullet();
+        }
 
         audioSource.PlayOneShot(shootSound);
 
@@ -94,51 +124,80 @@ public class Gun : MonoBehaviour
         if(currentAmmo <= 0)
             StartCoroutine(Reload());
     }
-
-    void ShootBullet(Quaternion rotation)
+    public void OnWeaponSwitch()
     {
-        Instantiate(bulletPrefab, muzzle.position, rotation);
+        StopAllCoroutines();
+        isReloading = false;
+        recoilOffset = Vector3.zero;
+        recoilRot = 0f;
     }
+    public Vector3 GetRecoilPosition()
+    {
+        return recoilOffset;
+    }
+    void RecoverRecoil()
+    {
+        recoilOffset = Vector3.Lerp(recoilOffset, Vector3.zero, Time.deltaTime * recoilRecoverSpeed);
+        recoilRot = Mathf.Lerp(recoilRot, 0f, Time.deltaTime * recoilRecoverSpeed);
+    }
+    public float GetRecoilRotation()
+    {
+        return recoilRot;
+    }
+    void ShootBullet()
+    {
+        Vector3 direction = GetShootDirection();
+        Quaternion rot = Quaternion.LookRotation(direction);
 
+        Instantiate(bulletPrefab, muzzle.position, rot);
+    }
+    Vector3 GetShootDirection()
+    {
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+
+        Vector3 targetPoint;
+
+        if (Physics.Raycast(ray, out hit, shootDistance))
+            targetPoint = hit.point;
+        else
+            targetPoint = ray.GetPoint(shootDistance);
+
+        return (targetPoint - muzzle.position).normalized;
+    }
     void ShootShotgun()
     {
-        for(int i=0;i<pelletCount;i++)
+        for(int i = 0; i < pelletCount; i++)
         {
-            float x = Random.Range(-spread, spread);
-            float y = Random.Range(-spread, spread);
+            Vector3 dir = GetShootDirection();
 
-            Quaternion spreadRot = muzzle.rotation * Quaternion.Euler(x,y,0);
+            dir = Quaternion.Euler(
+                Random.Range(-spread, spread),
+                Random.Range(-spread, spread),
+                0
+            ) * dir;
 
-            ShootBullet(spreadRot);
+            Quaternion rot = Quaternion.LookRotation(dir);
+
+            Instantiate(bulletPrefab, muzzle.position, rot);
         }
     }
 
     void ApplyRecoil()
     {
-        transform.localPosition -= new Vector3(0,0,recoilForce);
+        recoilOffset -= new Vector3(
+            Random.Range(-0.01f,0.01f),
+            Random.Range(-0.01f,0.01f),
+            recoilKick
+        );
 
-        StopCoroutine("RecoilRecover");
-        StartCoroutine("RecoilRecover");
-    }
-
-    IEnumerator RecoilRecover()
-    {
-        while(Vector3.Distance(transform.localPosition, originalGunPos) > 0.001f)
-        {
-            transform.localPosition = Vector3.Lerp(
-                transform.localPosition,
-                originalGunPos,
-                Time.deltaTime * 8f
-            );
-
-            yield return null;
-        }
-
-        transform.localPosition = originalGunPos;
+        recoilRot -= recoilRotation + Random.Range(-0.5f,0.5f);
     }
 
     public void ReloadButton()
     {
+        if(!gameObject.activeInHierarchy) return;
+
         if(!isReloading)
             StartCoroutine(Reload());
     }
@@ -149,6 +208,14 @@ public class Gun : MonoBehaviour
             yield break;
 
         isReloading = true;
+
+        bool wasAiming = aimSystem != null && aimSystem.IsAiming();
+
+        if(wasAiming)
+            aimSystem.StopAim();
+
+        if(gunAnimator)
+            gunAnimator.SetTrigger("Reload");
 
         audioSource.PlayOneShot(reloadSound);
 
@@ -163,13 +230,19 @@ public class Gun : MonoBehaviour
         UpdateAmmoUI();
 
         isReloading = false;
+
+        if(wasAiming)
+            aimSystem.ForceAim();
     }
 
-    void UpdateAmmoUI()
+    public void UpdateAmmoUI()
     {
         ammoText.text = currentAmmo + " / " + reserveAmmo;
     }
-
+    public bool IsReloading()
+    {
+        return isReloading;
+    }
     public void AddAmmo(int amount, AmmoType type)
     {
         if(type != ammoType) return;

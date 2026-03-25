@@ -6,7 +6,7 @@ public class ZombieAI : MonoBehaviour
     public NavMeshAgent agent;
 
     public Transform player;
-
+    public Animator animator;
     public float attackDistance = 1.5f;
     public float attackRate = 1f;
 
@@ -27,6 +27,9 @@ public class ZombieAI : MonoBehaviour
 
         agent.SetDestination(player.position);
 
+        float speed = agent.velocity.magnitude;
+        animator.SetFloat("Speed", speed);
+
         float dist = Vector3.Distance(transform.position, player.position);
 
         if(dist <= attackDistance && Time.time >= nextAttackTime)
@@ -34,10 +37,16 @@ public class ZombieAI : MonoBehaviour
             Attack();
         }
     }
-
+    public void DealDamage()
+    {
+        if(playerHealth != null)
+            playerHealth.TakeDamage(damage);
+    }
     void Attack()
     {
         nextAttackTime = Time.time + attackRate;
+
+        animator.SetTrigger("Attack");
 
         if(playerHealth != null)
         {
