@@ -6,6 +6,7 @@ TagManager:
   tags:
   - ZombieHead
   - ZombieBody
+  - Enemy
   layers:
   - Default
   - TransparentFX

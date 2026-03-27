@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -117,8 +118,24 @@ public class PlayerHealth : MonoBehaviour
             yield return null;
         }
     }
-    void Die()
-    {
-        Debug.Log("Player Dead");
-    }
+void Die()
+{
+    Debug.Log("Player Dead");
+    
+    // Disable player movement and controls
+    PlayerMovement playerMovement = GetComponent<PlayerMovement>();
+    if (playerMovement != null)
+        playerMovement.enabled = false;
+    
+    // Notify LevelManager that player died
+    LevelManager levelManager = FindObjectOfType<LevelManager>();
+    if (levelManager != null)
+        levelManager.PlayerDied();
+    
+    // Disable this script to prevent further damage
+    this.enabled = false;
+    
+    // Remove the Destroy line
+    // Destroy(gameObject, 4f);
+}
 }

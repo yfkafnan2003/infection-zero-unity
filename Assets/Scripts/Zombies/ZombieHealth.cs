@@ -8,9 +8,13 @@ public class ZombieHealth : MonoBehaviour
     public AudioClip hitSound;
     public Animator animator;
     public GameObject bloodFX;
+    
+    private bool isDead = false; // Add this flag to prevent multiple kill registrations
 
     public void TakeDamage(int damage, Vector3 hitPoint)
     {
+        if (isDead) return; // Don't process damage if already dead
+        
         health -= damage;
 
         if(animator)
@@ -36,11 +40,34 @@ public class ZombieHealth : MonoBehaviour
 
     void Die()
     {
+        if (isDead) return;
+        isDead = true;
+        
         if(animator)
             animator.SetTrigger("Die");
 
-        GetComponent<UnityEngine.AI.NavMeshAgent>().enabled = false;
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (agent != null) agent.enabled = false;
+        
+        // Disable zombie components to prevent further actions
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour script in scripts)
+        {
+            if (script != this)
+                script.enabled = false;
+        }
+        
+        // Register kill with LevelManager
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        if (levelManager != null)
+            levelManager.RegisterZombieKill();
 
         Destroy(gameObject, 10f);
     }
+    
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
 }
