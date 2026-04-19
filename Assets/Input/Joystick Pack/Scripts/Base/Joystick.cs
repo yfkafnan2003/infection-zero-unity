@@ -35,13 +35,31 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
     [SerializeField] private RectTransform handle = null;
     private RectTransform baseRect = null;
 
+    [Header("Movement Area")]
+    public RectTransform movementArea; // The panel where joystick can move
+    private Vector2 joystickOriginalPosition;
+    private bool isMovingJoystick = false;
+
     private Canvas canvas;
     private Camera cam;
 
     private Vector2 input = Vector2.zero;
-
+    
     protected virtual void Start()
     {
+        if (movementArea == null)
+        {
+            // Try to find by name
+            GameObject area = GameObject.Find("JoystickMovementArea");
+            if (area != null)
+                movementArea = area.GetComponent<RectTransform>();
+            
+            // If still not found, create one
+            if (movementArea == null && canvas != null)
+            {
+                CreateMovementArea();
+            }
+        }
         HandleRange = handleRange;
         DeadZone = deadZone;
         baseRect = GetComponent<RectTransform>();
@@ -55,10 +73,24 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         handle.anchorMax = center;
         handle.pivot = center;
         handle.anchoredPosition = Vector2.zero;
+        
+        joystickOriginalPosition = baseRect.anchoredPosition;
     }
 
     public virtual void OnPointerDown(PointerEventData eventData)
     {
+        // Check if clicking within the movement area
+        if (movementArea != null)
+        {
+            if (RectTransformUtility.RectangleContainsScreenPoint(movementArea, eventData.position, cam))
+            {
+                // Move entire joystick to click position within the area
+                MoveJoystickToPosition(eventData.position);
+                isMovingJoystick = true;
+            }
+        }
+        
+        // Start the joystick input
         OnDrag(eventData);
     }
 
@@ -74,6 +106,43 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         FormatInput();
         HandleInput(input.magnitude, input.normalized, radius, cam);
         handle.anchoredPosition = input * radius * handleRange;
+    }
+    
+    // Add this public method to your Joystick class
+    public void MoveJoystickToPosition(Vector2 screenPosition)
+    {
+        if (canvas == null)
+            canvas = GetComponentInParent<Canvas>();
+        
+        // Convert screen position to canvas position
+        Vector2 localPoint;
+        RectTransform canvasRect = canvas.GetComponent<RectTransform>();
+        
+        if (RectTransformUtility.ScreenPointToLocalPointInRectangle(canvasRect, screenPosition, null, out localPoint))
+        {
+            // Get the movement area bounds (use the parent panel or screen edges)
+            RectTransform parentRect = transform.parent.GetComponent<RectTransform>();
+            
+            if (parentRect != null)
+            {
+                Vector2 areaMin = parentRect.anchoredPosition - (parentRect.sizeDelta / 2);
+                Vector2 areaMax = parentRect.anchoredPosition + (parentRect.sizeDelta / 2);
+                
+                float clampedX = Mathf.Clamp(localPoint.x, areaMin.x, areaMax.x);
+                float clampedY = Mathf.Clamp(localPoint.y, areaMin.y, areaMax.y);
+                
+                baseRect.anchoredPosition = new Vector2(clampedX, clampedY);
+            }
+            else
+            {
+                // Just move to the clicked position
+                baseRect.anchoredPosition = localPoint;
+            }
+            
+            // Reset handle position
+            handle.anchoredPosition = Vector2.zero;
+            input = Vector2.zero;
+        }
     }
 
     protected virtual void HandleInput(float magnitude, Vector2 normalised, Vector2 radius, Camera cam)
@@ -94,7 +163,21 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
         else if (axisOptions == AxisOptions.Vertical)
             input = new Vector2(0f, input.y);
     }
-
+    void CreateMovementArea()
+    {
+        GameObject areaObj = new GameObject("JoystickMovementArea");
+        areaObj.transform.SetParent(canvas.transform, false);
+        
+        movementArea = areaObj.AddComponent<RectTransform>();
+        movementArea.anchorMin = new Vector2(0, 0.5f);
+        movementArea.anchorMax = new Vector2(0.5f, 0.5f);
+        movementArea.sizeDelta = new Vector2(Screen.width / 2, Screen.height);
+        movementArea.anchoredPosition = new Vector2(movementArea.sizeDelta.x / 2, 0);
+        
+        // Add a transparent image to make it clickable
+        UnityEngine.UI.Image image = areaObj.AddComponent<UnityEngine.UI.Image>();
+        image.color = new Color(0, 0, 0, 0.01f); // Almost invisible but clickable
+    }
     private float SnapFloat(float value, AxisOptions snapAxis)
     {
         if (value == 0)
@@ -131,6 +214,7 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
 
     public virtual void OnPointerUp(PointerEventData eventData)
     {
+        isMovingJoystick = false;
         input = Vector2.zero;
         handle.anchoredPosition = Vector2.zero;
     }
@@ -144,6 +228,14 @@ public class Joystick : MonoBehaviour, IPointerDownHandler, IDragHandler, IPoint
             return localPoint - (background.anchorMax * baseRect.sizeDelta) + pivotOffset;
         }
         return Vector2.zero;
+    }
+    
+    // Public method to reset joystick to original position
+    public void ResetJoystickPosition()
+    {
+        baseRect.anchoredPosition = joystickOriginalPosition;
+        handle.anchoredPosition = Vector2.zero;
+        input = Vector2.zero;
     }
 }
 

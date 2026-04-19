@@ -76,7 +76,27 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
+    public void StartShake(float duration, float magnitude)
+    {
+        if (playerCamera != null)
+            StartCoroutine(ShakeCoroutine(duration, magnitude));
+    }
 
+    // Also add a simple shake method for external calls:
+    public void ShakeCamera(float duration = 0.5f, float magnitude = 0.3f)
+    {
+        if (playerCamera != null)
+            StartCoroutine(ShakeCoroutine(duration, magnitude));
+    }
+    public void Heal(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+            currentHealth = maxHealth;
+        
+        UpdateHealthBar();
+        Debug.Log($"Healed for {amount}. Current health: {currentHealth}");
+    }
     IEnumerator ShakeCoroutine(float duration, float magnitude)
     {
         float timer = 0;

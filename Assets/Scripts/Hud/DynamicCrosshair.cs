@@ -72,19 +72,30 @@ public class DynamicCrosshair : MonoBehaviour
     }
     void CheckEnemyTarget()
     {
-        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f,0.5f,0));
-
-        RaycastHit[] hits = Physics.RaycastAll(ray, detectionDistance);
-
-        for(int i = 0; i < hits.Length; i++)
+        Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
+        RaycastHit hit;
+        
+        // Use single raycast instead of RaycastAll for better performance
+        if (Physics.Raycast(ray, out hit, detectionDistance))
         {
-            if(hits[i].collider.GetComponentInParent<ZombieHealth>())
+            // Try to get ZombieHealth from the hit collider or its parent
+            ZombieHealth enemy = hit.collider.GetComponent<ZombieHealth>();
+            
+            // If not found on the collider, try on parent
+            if (enemy == null && hit.collider.transform.parent != null)
+                enemy = hit.collider.transform.parent.GetComponent<ZombieHealth>();
+            
+            // If still not found, try on root
+            if (enemy == null)
+                enemy = hit.collider.GetComponentInParent<ZombieHealth>();
+            
+            if (enemy != null && !enemy.IsDead())
             {
                 SetCrosshairColor(enemyColor);
                 return;
             }
         }
-
+        
         SetCrosshairColor(normalColor);
     }
     void SetCrosshairColor(Color c)

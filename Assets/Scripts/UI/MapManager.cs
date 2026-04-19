@@ -1,23 +1,78 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
-
+using UnityEngine.UI;
+using TMPro;
 public class MapManager : MonoBehaviour
 {
+    public static MapManager Instance;
+    
     public GameObject currentPOIPanel;
     public POIPanelController panelController;
     
     [Header("POI Buttons")]
     public List<GameObject> poiButtons;
     public List<POIData> poiDataList;
+    
+    [Header("POI Button Components")]
+    public List<Image> poiButtonIcons; // References to icon images on buttons
+    public List<TextMeshProUGUI> poiButtonTexts; // References to text components
 
-    POIData currentPOI;
-
+    private POIData currentPOI;
+    
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
+    }
+    
     void Start()
     {
         UpdatePOIVisibility();
+        SetupPOIButtons();
     }
-
+    
+    void SetupPOIButtons()
+    {
+        // Setup icons and text for each POI button
+        for (int i = 0; i < poiButtons.Count && i < poiDataList.Count; i++)
+        {
+            POIData poi = poiDataList[i];
+            
+            // Set icon if available
+            if (i < poiButtonIcons.Count && poiButtonIcons[i] != null && poi.poiIcon != null)
+            {
+                poiButtonIcons[i].sprite = poi.poiIcon;
+                poiButtonIcons[i].color = Color.white;
+            }
+            
+            // Set button text
+            if (i < poiButtonTexts.Count && poiButtonTexts[i] != null)
+            {
+                poiButtonTexts[i].text = poi.poiName;
+            }
+            
+            // Add click listener to button
+            if (poiButtons[i] != null)
+            {
+                int index = i; // Capture for closure
+                Button button = poiButtons[i].GetComponent<Button>();
+                if (button != null)
+                {
+                    button.onClick.RemoveAllListeners();
+                    button.onClick.AddListener(() => OpenPOI(poiDataList[index]));
+                }
+            }
+        }
+    }
+    
     void UpdatePOIVisibility()
     {
         if (GameManager.instance == null) return;
@@ -26,19 +81,16 @@ public class MapManager : MonoBehaviour
         {
             POIData poi = poiDataList[i];
             
-            // Check if POI is available (in current chain and not completed)
             bool isAvailable = GameManager.instance.IsPOIAvailable(poi);
             bool isCompleted = GameManager.instance.IsPOICompleted(poi.poiName);
             
             if (isCompleted || !isAvailable)
             {
-                // Hide completed or locked POI button
                 if (poiButtons[i] != null)
                     poiButtons[i].SetActive(false);
             }
             else
             {
-                // Show available POI button
                 if (poiButtons[i] != null)
                     poiButtons[i].SetActive(true);
             }
@@ -71,10 +123,6 @@ public class MapManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("Selected POI: " + currentPOI.poiName);
-        Debug.Log("POI Type: " + currentPOI.poiType);
-        Debug.Log("POI Level Scene: " + currentPOI.levelScene);
-
         if(GameManager.instance == null)
         {
             Debug.LogError("GameManager instance not found!");
@@ -83,7 +131,7 @@ public class MapManager : MonoBehaviour
 
         if(GameManager.instance.playerLevel < currentPOI.requiredPlayerLevel)
         {
-            Debug.Log("Level too low! Required: " + currentPOI.requiredPlayerLevel + ", Player: " + GameManager.instance.playerLevel);
+            Debug.Log("Level too low! Required: " + currentPOI.requiredPlayerLevel);
             return;
         }
 
@@ -91,20 +139,18 @@ public class MapManager : MonoBehaviour
         {
             GameManager.instance.CurrentPOI = currentPOI;
             
-            if(GameManager.instance.CurrentPOI != null)
+            // Check if LoadingScreen exists
+            if (LoadingScreen.Instance != null)
             {
-                Debug.Log("POI saved successfully: " + GameManager.instance.CurrentPOI.poiName);
-                Debug.Log("Loading scene: " + currentPOI.levelScene);
-                SceneManager.LoadScene(currentPOI.levelScene);
+                Debug.Log("Using LoadingScreen to load: " + currentPOI.levelScene);
+                LoadingScreen.Instance.LoadScene(currentPOI.levelScene);
             }
             else
             {
-                Debug.LogError("Failed to save POI data!");
+                Debug.LogWarning("LoadingScreen.Instance is null! Make sure LoadingScreen exists in the scene.");
+                // Fallback direct load
+                SceneManager.LoadScene(currentPOI.levelScene);
             }
-        }
-        else
-        {
-            Debug.Log("Not enough energy! Current energy: " + GameManager.instance.currentEnergy);
         }
     }
     

@@ -22,16 +22,75 @@ public class WeaponManager : MonoBehaviour
     public AimSystem aimSystem;
     void Start()
     {
-        for(int i=0;i<weapons.Length;i++)
+
+    }
+    void Update()
+    {
+        if (Input.touchCount > 0)
         {
-            weapons[i].gameObject.SetActive(false);
-            weapons[i].aimSystem = aimSystem;
+            Touch touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                Debug.Log("Touch Began - Start Shooting");
+                ShootCurrentWeapon();
+            }
+            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
+            {
+                Debug.Log("Touch Ended - Stop Shooting");
+                StopShootingCurrentWeapon();
+            }
+        }
+    }
+    public void InitializeWeapons()
+    {
+        // First, deactivate all weapons and setup references
+        for(int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i] != null)
+            {
+                weapons[i].gameObject.SetActive(false);
+                weapons[i].aimSystem = aimSystem;
+                weapons[i].playerCamera = aimSystem.playerCamera;
+                
+                // Make sure Animator reference is set (find in child if needed)
+                if (weapons[i].gunAnimator == null && weapons[i].transform.childCount > 0)
+                {
+                    weapons[i].gunAnimator = weapons[i].transform.GetChild(0).GetComponent<Animator>();
+                }
+            }
         }
 
-        weapons[0].gameObject.SetActive(true);
-        aimSystem.gun = weapons[0].transform;
+        // Find first valid weapon to activate
+        currentWeaponIndex = -1;
+        for (int i = 0; i < weapons.Length; i++)
+        {
+            if (weapons[i] != null)
+            {
+                currentWeaponIndex = i;
+                break;
+            }
+        }
+        
+        if (currentWeaponIndex >= 0 && weapons[currentWeaponIndex] != null)
+        {
+            weapons[currentWeaponIndex].gameObject.SetActive(true);
+            if (aimSystem != null)
+                aimSystem.gun = weapons[currentWeaponIndex].transform;
+        }
 
         UpdateUI();
+    }
+    public void UpdateWeaponUIVisibility()
+    {
+        // Only show weapon icons for weapons that exist
+        for (int i = 0; i < weaponIcons.Length; i++)
+        {
+            if (weaponIcons[i] != null)
+            {
+                // Hide icon if weapon doesn't exist
+                weaponIcons[i].gameObject.SetActive(weapons[i] != null);
+            }
+        }
     }
     public void EquipWeapon(int index)
     {
@@ -52,6 +111,7 @@ public class WeaponManager : MonoBehaviour
         float t = 0;
 
         // Move current gun down
+
         while(t < 1)
         {
             t += Time.deltaTime * switchSpeed;
@@ -95,9 +155,19 @@ public class WeaponManager : MonoBehaviour
     public void ShootCurrentWeapon()
     {
         Gun gun = GetCurrentWeapon();
+        if (gun != null)
+        {
+            gun.StartShooting(); // Changed from gun.Shoot()
+        }
+    }
 
-        if(gun != null)
-            gun.Shoot();
+    public void StopShootingCurrentWeapon()
+    {
+        Gun gun = GetCurrentWeapon();
+        if (gun != null)
+        {
+            gun.StopShooting();
+        }
     }
     public void ReloadCurrentWeapon()
     {
@@ -106,7 +176,7 @@ public class WeaponManager : MonoBehaviour
         if(gun != null)
             gun.ReloadButton();
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         for(int i = 0; i < weaponIcons.Length; i++)
         {

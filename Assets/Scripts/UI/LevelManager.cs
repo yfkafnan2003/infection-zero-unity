@@ -15,6 +15,8 @@ public class LevelManager : MonoBehaviour
     [Header("Mission Icons")]
     public Sprite killZombiesIcon;
     public Sprite countdownIcon;
+    public Sprite retrieveBoxIcon;
+    public Sprite protectDoorIcon;
     private bool isGameFrozen = false;
     
     [Header("Kill Zombies Settings")]
@@ -32,7 +34,8 @@ public class LevelManager : MonoBehaviour
     public CanvasGroup completionPanelCanvasGroup; // Add this for fade effect
     public float slowMotionTimeScale = 0.2f; // Slow motion speed
     public float fadeInDuration = 1.5f; // How long fade takes
-    
+    private ArenaManager arenaManager;
+
     [Header("Death Panel")]
     public GameObject deathPanel;
     public TextMeshProUGUI deathText;
@@ -44,11 +47,13 @@ public class LevelManager : MonoBehaviour
     [Header("References")]
     public PlayerHealth playerHealth;
     public GameObject enemySpawner;
-    
+    [HideInInspector] public POIData currentPOIData;
     private POIType currentMissionType;
     private bool missionCompleted = false;
     private bool missionFailed = false;
-    
+    private ProtectDoorManager protectDoorManager;
+
+    private BossHealth bossHealth;
     void Start()
     {
         // Setup completion panel fade
@@ -68,7 +73,20 @@ public class LevelManager : MonoBehaviour
             missionObjectiveText.text = "GameManager not found!";
             return;
         }
-        
+        if (GameManager.instance != null && GameManager.instance.CurrentPOI != null)
+        {
+            currentPOIData = GameManager.instance.CurrentPOI;
+            
+            // Configure zombie spawner
+            ZombieSpawner spawner = FindObjectOfType<ZombieSpawner>();
+            if (spawner != null)
+            {
+                spawner.ConfigureFromPOI(currentPOIData);
+            }
+            
+            // Setup mission based on POI type
+            SetupMissionFromPOI(currentPOIData);
+        }
         // Debug: Check current POI
         if (GameManager.instance.CurrentPOI == null)
         {
@@ -105,7 +123,18 @@ public class LevelManager : MonoBehaviour
             case POIType.CountdownSurvive:
                 SetupCountdownMission(currentPOI.surviveTime);
                 break;
-                
+            case POIType.Arena:  // Add this case
+                SetupArenaMission();
+                break;
+            case POIType.RetrieveBox:
+                SetupRetrieveBoxMission();
+                break;   
+            case POIType.ProtectDoor:
+                SetupProtectDoorMission();
+                break;
+            case POIType.BossFight:
+                SetupBossFightMission();
+                break;
             default:
                 Debug.LogWarning("Unsupported mission type: " + currentMissionType);
                 missionTitleText.text = "UNSUPPORTED MISSION";
@@ -146,7 +175,65 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log($"Kill Zombies Mission Started. Need to kill: {zombiesToKill} zombies");
     }
-    
+    void SetupMissionFromPOI(POIData poi)
+    {
+        switch (poi.poiType)
+        {
+            case POIType.KillZombies:
+                SetupKillZombiesMission(poi.zombieAmount);
+                break;
+                
+            case POIType.CountdownSurvive:
+                SetupCountdownMission(poi.surviveTime);
+                break;
+        }
+    }
+    void SetupArenaMission()
+    {
+        if (missionTitleText != null)
+            missionTitleText.text = "ARENA MODE";
+        
+        if (missionObjectiveText != null)
+            missionObjectiveText.text = "Survive all 20 rounds!";
+        
+        if (missionIcon != null)
+            missionIcon.sprite = killZombiesIcon; // Or use arena icon
+        
+        arenaManager = FindObjectOfType<ArenaManager>();
+        if (arenaManager == null)
+        {
+            Debug.LogError("ArenaManager not found in scene!");
+        }
+        
+        UpdateMissionProgress();
+    }
+    void SetupBossFightMission()
+    {
+        if (missionTitleText != null)
+            missionTitleText.text = "BOSS FIGHT";
+        
+        if (missionObjectiveText != null)
+            missionObjectiveText.text = "Defeat the Boss!";
+        
+        if (missionIcon != null)
+            missionIcon.sprite = killZombiesIcon;
+        
+        bossHealth = FindObjectOfType<BossHealth>();
+        if (bossHealth == null)
+        {
+            Debug.LogError("BossHealth not found in scene!");
+        }
+        
+        UpdateMissionProgress();
+    }
+
+    void UpdateBossFightMission()
+    {
+        if (bossHealth != null && missionProgressText != null)
+        {
+            missionProgressText.text = $"Boss Health: {bossHealth.currentHealth}/{bossHealth.maxHealth}";
+        }
+    }
     void SlowMotionAndFadeIn()
     {
         // Set slow motion
@@ -197,12 +284,12 @@ public class LevelManager : MonoBehaviour
         
         Debug.Log($"Countdown Mission Started. Need to survive: {surviveTime} seconds");
     }
-    
+        
     void Update()
     {
         if (missionCompleted || missionFailed)
             return;
-            
+        
         // Update mission progress based on type
         switch (currentMissionType)
         {
@@ -213,6 +300,33 @@ public class LevelManager : MonoBehaviour
             case POIType.CountdownSurvive:
                 UpdateCountdownMission();
                 break;
+                
+            case POIType.Arena:
+                UpdateArenaMission();
+                break;
+            case POIType.ProtectDoor:
+                UpdateProtectDoorMission();
+                break;
+            case POIType.RetrieveBox:
+                UpdateRetrieveBoxMission();
+                break;
+            case POIType.BossFight:
+                UpdateBossFightMission();
+                break;
+        }
+    }
+    public void InstantMissionComplete()
+    {
+        if (missionCompleted || missionFailed) return;
+        CompleteMission(true);
+    }
+    void UpdateArenaMission()
+    {
+        if (arenaManager != null && missionProgressText != null)
+        {
+            // Show round info in mission progress
+            missionProgressText.text = $"Round: {arenaManager.GetCurrentRound()}/{arenaManager.GetTotalRounds()}\n" +
+                                    $"Zombies Left: {arenaManager.GetZombiesRemaining()}";
         }
     }
     
@@ -227,7 +341,35 @@ public class LevelManager : MonoBehaviour
             UpdateMissionProgress();
         }
     }
-    
+    private RetrieveBoxManager retrieveBoxManager;
+
+    void SetupRetrieveBoxMission()
+    {
+        if (missionTitleText != null)
+            missionTitleText.text = "RETRIEVE BOXES";
+        
+        if (missionObjectiveText != null)
+            missionObjectiveText.text = $"Find {currentPOIData.boxesToCollect} boxes and reach the exit";
+        
+        if (missionIcon != null && retrieveBoxIcon != null) // Use retrieveBoxIcon instead
+            missionIcon.sprite = retrieveBoxIcon;
+        
+        retrieveBoxManager = FindObjectOfType<RetrieveBoxManager>();
+        if (retrieveBoxManager == null)
+        {
+            Debug.LogError("RetrieveBoxManager not found in scene!");
+        }
+        
+        UpdateMissionProgress();
+    }
+
+    void UpdateRetrieveBoxMission()
+    {
+        if (retrieveBoxManager != null && missionProgressText != null)
+        {
+            missionProgressText.text = $"Boxes Collected: {currentPOIData.boxesToCollect - retrieveBoxManager.GetBoxesRemaining()}/{currentPOIData.boxesToCollect}";
+        }
+    }
     void UpdateCountdownMission()
     {
         if (isCountdownActive && !missionCompleted)
@@ -269,11 +411,42 @@ public class LevelManager : MonoBehaviour
         {
             currentZombieKills++;
             UpdateMissionProgress();
-            
             Debug.Log($"Zombie killed! Progress: {currentZombieKills}/{zombiesToKill}");
         }
+        else if (currentMissionType == POIType.Arena && !missionCompleted)
+        {
+            if (arenaManager != null)
+            {
+                arenaManager.RegisterZombieKill();
+            }
+        }
     }
-    
+    void SetupProtectDoorMission()
+    {
+        if (missionTitleText != null)
+            missionTitleText.text = "PROTECT THE DOOR";
+        
+        if (missionObjectiveText != null)
+            missionObjectiveText.text = $"Protect the door for {currentPOIData.protectTime} seconds";
+        
+        if (missionIcon != null && protectDoorIcon != null)
+            missionIcon.sprite = protectDoorIcon;
+        
+        protectDoorManager = FindObjectOfType<ProtectDoorManager>();
+        if (protectDoorManager == null)
+        {
+            Debug.LogError("ProtectDoorManager not found in scene!");
+        }
+        
+        UpdateMissionProgress();
+    }
+
+    void UpdateProtectDoorMission()
+    {
+        if (protectDoorManager != null && missionProgressText != null)
+        {
+        }
+    }
     public void PlayerDied()
     {
         if (!missionCompleted && !missionFailed)
@@ -282,15 +455,14 @@ public class LevelManager : MonoBehaviour
         }
     }
     
-   void CompleteMission(bool success)
+    public void CompleteMission(bool success)
     {
         if (missionCompleted || missionFailed)
             return;
-            
-        missionCompleted = success;
         
         if (success)
         {
+            missionCompleted = true;
             Debug.Log("Mission Complete!");
             
             // Stop zombie spawner
@@ -302,11 +474,9 @@ public class LevelManager : MonoBehaviour
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
-                // Disable NavMeshAgent to stop movement
                 UnityEngine.AI.NavMeshAgent agent = enemy.GetComponent<UnityEngine.AI.NavMeshAgent>();
                 if (agent != null) agent.enabled = false;
                 
-                // Disable enemy AI
                 MonoBehaviour[] scripts = enemy.GetComponents<MonoBehaviour>();
                 foreach (MonoBehaviour script in scripts)
                 {
@@ -339,7 +509,15 @@ public class LevelManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Mission Failed!");
+            // Player died
+            missionFailed = true;
+            Debug.Log("Player Died - Mission Failed!");
+            
+            // Stop zombie spawner
+            ZombieSpawner spawner = FindObjectOfType<ZombieSpawner>();
+            if (spawner != null)
+                spawner.StopSpawning();
+            
             FreezeGame();
             ShowDeathPanel();
         }
@@ -406,12 +584,52 @@ public class LevelManager : MonoBehaviour
             StartCoroutine(ReturnToMapAfterDelay(deathSceneDelay));
         }
     }
-
+    public void ShowMissionFailed()
+    {
+        if (missionCompleted || missionFailed)
+            return;
+        
+        missionFailed = true;
+        
+        Debug.Log("Mission Failed!");
+        
+        // Stop zombie spawner
+        ZombieSpawner spawner = FindObjectOfType<ZombieSpawner>();
+        if (spawner != null)
+            spawner.StopSpawning();
+        
+        FreezeGame();
+        
+        // Show death panel but with different text
+        if (deathPanel != null)
+        {
+            deathPanel.SetActive(true);
+            if (deathText != null)
+            {
+                deathText.text = "MISSION FAILED!";
+            }
+            
+            if (audioSource != null && deathSound != null)
+            {
+                audioSource.PlayOneShot(deathSound);
+            }
+            
+            StartCoroutine(ReturnToMapAfterDelay(deathSceneDelay));
+        }
+    }
     IEnumerator ReturnToMapAfterDelay(float delay)
     {
         yield return new WaitForSecondsRealtime(delay); // Use real time since game is frozen
-        Time.timeScale = 1f; // Reset time scale before loading
-        SceneManager.LoadScene("MapScene");
+        // Use loading screen
+        if (LoadingScreen.Instance != null)
+        {
+            LoadingScreen.Instance.LoadScene("MapScene");
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene("MapScene");
+        }
     }
 
     void OnContinueButtonClicked()
@@ -436,7 +654,15 @@ public class LevelManager : MonoBehaviour
             }
         }
         
-        SceneManager.LoadScene("MapScene");
+        // Use loading screen (REMOVED the duplicate SceneManager.LoadScene)
+        if (LoadingScreen.Instance != null)
+        {
+            LoadingScreen.Instance.LoadScene("MapScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("MapScene");
+        }
     }
 
     int CalculateReward()
@@ -445,22 +671,15 @@ public class LevelManager : MonoBehaviour
             return 50;
             
         POIData poi = GameManager.instance.CurrentPOI;
-        int baseReward = 50;
-        float difficultyMultiplier = 1 + (poi.difficultyLevel - 1) * 0.2f;
-        float typeBonus = currentMissionType == POIType.CountdownSurvive ? 1.2f : 1f;
-        
-        return Mathf.RoundToInt(baseReward * difficultyMultiplier * typeBonus);
+        return poi.GetMoneyReward();
     }
-    
+
     int CalculateXP()
     {
         if (GameManager.instance == null || GameManager.instance.CurrentPOI == null)
             return 25;
             
         POIData poi = GameManager.instance.CurrentPOI;
-        int baseXP = 25;
-        float difficultyMultiplier = 1 + (poi.difficultyLevel - 1) * 0.15f;
-        
-        return Mathf.RoundToInt(baseXP * difficultyMultiplier);
+        return poi.GetXPReward();
     }
 }

@@ -4,18 +4,22 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Header("Special POIs (Always Available)")]
+    public List<POIData> specialPOIs = new List<POIData>();
     [Header("POI Progress")]
     public List<string> completedPOIs = new List<string>();
 
     [Header("Player Progress")]
     public int playerLevel = 1;
     public int playerMoney = 0;
+    public int currentXP = 0;
+    public int xpToNextLevel = 100;
 
     [System.Serializable]
     public class POIChain
     {
         public string chainName;
-        public List<POIData> poiList; // Order matters - will unlock in sequence
+        public List<POIData> poiList;
     }
 
     [Header("POI Chain System")]
@@ -30,22 +34,21 @@ public class GameManager : MonoBehaviour
         set { _currentPOI = value; }
     }
     
-    [Header("XP System")]
-    public int currentXP = 0;
-    public int xpToNextLevel = 100;
-
     [Header("Energy")]
     public int maxEnergy = 5;
     public int currentEnergy = 5;
     public float energyRegenTime = 300f; // 5 minutes in seconds
-    private float energyRegenTimer = 0f;
-
+    private string lastEnergyUpdateKey = "LastEnergyUpdate";
+    private float realTimeRegenTimer = 0f; // Real-time countdown timer
+        
     void Awake()
     {
         if(instance == null)
         {
             instance = this;
             DontDestroyOnLoad(gameObject);
+            LoadAllData();
+            UpdateEnergyOffline(); // Calculate energy gained while app was closed
             Debug.Log("GameManager initialized and persists across scenes");
         }
         else
@@ -56,7 +59,6 @@ public class GameManager : MonoBehaviour
 
     void Start()
     {
-        // Debug to check if POI persists
         if(_currentPOI != null)
         {
             Debug.Log("GameManager has POI: " + _currentPOI.poiName);
@@ -65,46 +67,148 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log("GameManager has no POI set");
         }
-        
-        // Start energy regen timer
-        energyRegenTimer = energyRegenTime;
     }
 
     void Update()
     {
-        // Energy regeneration
+        // Real-time energy regeneration while app is running
         if (currentEnergy < maxEnergy)
         {
-            energyRegenTimer -= Time.deltaTime;
+            realTimeRegenTimer += Time.deltaTime;
             
-            if (energyRegenTimer <= 0)
+            if (realTimeRegenTimer >= energyRegenTime)
             {
                 currentEnergy = Mathf.Min(currentEnergy + 1, maxEnergy);
-                energyRegenTimer = energyRegenTime;
+                realTimeRegenTimer = 0f;
+                SaveAllData();
                 Debug.Log($"Energy regenerated! Current energy: {currentEnergy}/{maxEnergy}");
             }
         }
         else
         {
-            // Reset timer when at max energy
-            energyRegenTimer = energyRegenTime;
+            realTimeRegenTimer = 0f;
         }
     }
 
+    void UpdateEnergyOffline()
+    {
+        float lastUpdate = PlayerPrefs.GetFloat(lastEnergyUpdateKey, (float)GetCurrentTimestamp());
+        float currentTime = (float)GetCurrentTimestamp();
+        float timePassed = currentTime - lastUpdate;
+        
+        // Add offline time to realTimeRegenTimer
+        realTimeRegenTimer += timePassed;
+        
+        if (realTimeRegenTimer >= energyRegenTime && currentEnergy < maxEnergy)
+        {
+            int energyToAdd = Mathf.FloorToInt(realTimeRegenTimer / energyRegenTime);
+            currentEnergy = Mathf.Min(currentEnergy + energyToAdd, maxEnergy);
+            realTimeRegenTimer = realTimeRegenTimer % energyRegenTime;
+            Debug.Log($"Offline energy regeneration: Added {energyToAdd} energy. Now at {currentEnergy}/{maxEnergy}");
+        }
+        
+        // Update last update time
+        PlayerPrefs.SetFloat(lastEnergyUpdateKey, currentTime);
+        PlayerPrefs.Save();
+    }
+
+    public float GetEnergyRegenTimeRemaining()
+    {
+        if (currentEnergy >= maxEnergy)
+            return 0f;
+        
+        return Mathf.Max(0, energyRegenTime - realTimeRegenTimer);
+    }
+    double GetCurrentTimestamp()
+    {
+        return System.DateTime.UtcNow.Subtract(new System.DateTime(1970, 1, 1)).TotalSeconds;
+    }
+
+    public void SaveAllData()
+    {
+        PlayerPrefs.SetInt("PlayerLevel", playerLevel);
+        PlayerPrefs.SetInt("PlayerMoney", playerMoney);
+        PlayerPrefs.SetInt("CurrentXP", currentXP);
+        PlayerPrefs.SetInt("XPToNextLevel", xpToNextLevel);
+        PlayerPrefs.SetInt("CurrentEnergy", currentEnergy);
+        PlayerPrefs.SetInt("CurrentChainIndex", currentChainIndex);
+        
+        // Save real-time timer progress
+        PlayerPrefs.SetFloat("RealTimeRegenTimer", realTimeRegenTimer);
+        
+        // Save last energy update time for offline
+        PlayerPrefs.SetFloat(lastEnergyUpdateKey, (float)GetCurrentTimestamp());
+        
+        // Save completed POIs
+        PlayerPrefs.SetInt("CompletedPOICount", completedPOIs.Count);
+        for (int i = 0; i < completedPOIs.Count; i++)
+        {
+            PlayerPrefs.SetString($"CompletedPOI_{i}", completedPOIs[i]);
+        }
+        
+        PlayerPrefs.Save();
+        Debug.Log("Game data saved!");
+    }
+
+    public void LoadAllData()
+    {
+        playerLevel = PlayerPrefs.GetInt("PlayerLevel", 1);
+        playerMoney = PlayerPrefs.GetInt("PlayerMoney", 0);
+        currentXP = PlayerPrefs.GetInt("CurrentXP", 0);
+        xpToNextLevel = PlayerPrefs.GetInt("XPToNextLevel", 100);
+        currentEnergy = PlayerPrefs.GetInt("CurrentEnergy", maxEnergy);
+        currentChainIndex = PlayerPrefs.GetInt("CurrentChainIndex", 0);
+        
+        // Load real-time timer
+        realTimeRegenTimer = PlayerPrefs.GetFloat("RealTimeRegenTimer", 0f);
+        
+        // Load completed POIs
+        completedPOIs.Clear();
+        int completedCount = PlayerPrefs.GetInt("CompletedPOICount", 0);
+        for (int i = 0; i < completedCount; i++)
+        {
+            string poiName = PlayerPrefs.GetString($"CompletedPOI_{i}", "");
+            if (!string.IsNullOrEmpty(poiName))
+                completedPOIs.Add(poiName);
+        }
+        
+        Debug.Log($"Game data loaded! Level: {playerLevel}, Money: ${playerMoney}, Energy: {currentEnergy}");
+    }
+    // Rest of your existing methods...
+    public void ResetAllStoreItemsExceptGlocky()
+    {
+        SaveAllData();
+        Debug.Log("Store items reset (except Glocky)");
+    }
+    
+    public void ResetGameProgress()
+    {
+        playerLevel = 1;
+        playerMoney = 0;
+        currentXP = 0;
+        xpToNextLevel = 100;
+        currentEnergy = maxEnergy;
+        currentChainIndex = 0;
+        completedPOIs.Clear();
+        
+        SaveAllData();
+        Debug.Log("Game progress reset! Level and money reset to default.");
+    }
+    
     public bool UseEnergy()
     {
         if(currentEnergy <= 0)
             return false;
 
         currentEnergy--;
-        // Reset regen timer when energy is used
-        energyRegenTimer = energyRegenTime;
+        SaveAllData();
         return true;
     }
 
     public void AddMoney(int amount)
     {
         playerMoney += amount;
+        SaveAllData();
         Debug.Log($"Added ${amount}. Total money: ${playerMoney}");
     }
 
@@ -118,24 +222,7 @@ public class GameManager : MonoBehaviour
             currentXP -= xpToNextLevel;
             LevelUp();
         }
-    }
-    
-    public void ResetGame()
-    {
-        // Reset player progress
-        playerLevel = 1;
-        playerMoney = 0;
-        currentXP = 0;
-        xpToNextLevel = 100;
-        
-        // Reset energy
-        currentEnergy = maxEnergy;
-        energyRegenTimer = energyRegenTime;
-        
-        // Reset POI progress
-        ResetPOIProgress();
-        
-        Debug.Log("Game has been reset! All progress cleared.");
+        SaveAllData();
     }
     
     public void MarkPOIAsCompleted(string poiName)
@@ -143,9 +230,8 @@ public class GameManager : MonoBehaviour
         if (!completedPOIs.Contains(poiName))
         {
             completedPOIs.Add(poiName);
+            SaveAllData();
             Debug.Log($"POI '{poiName}' marked as completed!");
-            
-            // Check if current chain is fully completed
             CheckChainCompletion();
         }
     }
@@ -158,7 +244,6 @@ public class GameManager : MonoBehaviour
         POIChain currentChain = poiChains[currentChainIndex];
         bool allCompleted = true;
         
-        // Check if all POIs in current chain are completed
         foreach (POIData poi in currentChain.poiList)
         {
             if (!completedPOIs.Contains(poi.poiName))
@@ -168,10 +253,10 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        // If all POIs in current chain are completed, move to next chain
         if (allCompleted && currentChainIndex + 1 < poiChains.Count)
         {
             currentChainIndex++;
+            SaveAllData();
             Debug.Log($"Chain '{currentChain.chainName}' completed! Moved to next chain: {poiChains[currentChainIndex].chainName}");
         }
     }
@@ -180,9 +265,7 @@ public class GameManager : MonoBehaviour
     {
         completedPOIs.Clear();
         currentChainIndex = 0;
-        
-        // First chain's first POI is automatically available
-        // No need to mark anything as completed
+        SaveAllData();
         Debug.Log("POI progress reset!");
     }
     
@@ -190,19 +273,17 @@ public class GameManager : MonoBehaviour
     {
         return completedPOIs.Contains(poiName);
     }
-    // Add this property to GameManager class to expose the timer:
-    public float GetEnergyRegenTimeRemaining()
-    {
-        return energyRegenTimer;
-    }
-    // Check if a POI is available (not completed and in current chain)
+    
     public bool IsPOIAvailable(POIData poi)
     {
-        // If already completed, not available
+        if (specialPOIs.Contains(poi))
+        {
+            return !completedPOIs.Contains(poi.poiName);
+        }
+        
         if (completedPOIs.Contains(poi.poiName))
             return false;
             
-        // Check if POI belongs to current chain
         if (currentChainIndex < poiChains.Count)
         {
             POIChain currentChain = poiChains[currentChainIndex];
@@ -212,7 +293,6 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    // Add this method to get the next available POI
     public POIData GetNextPOIInChain()
     {
         if (poiChains.Count == 0 || currentChainIndex >= poiChains.Count)
@@ -220,7 +300,6 @@ public class GameManager : MonoBehaviour
         
         POIChain currentChain = poiChains[currentChainIndex];
         
-        // Find next uncompleted POI in current chain
         for (int i = 0; i < currentChain.poiList.Count; i++)
         {
             if (!completedPOIs.Contains(currentChain.poiList[i].poiName))
@@ -229,11 +308,10 @@ public class GameManager : MonoBehaviour
             }
         }
         
-        // If all POIs in current chain are completed, move to next chain
         if (currentChainIndex + 1 < poiChains.Count)
         {
             currentChainIndex++;
-            // Return first POI of next chain
+            SaveAllData();
             if (poiChains[currentChainIndex].poiList.Count > 0)
             {
                 return poiChains[currentChainIndex].poiList[0];
@@ -242,11 +320,11 @@ public class GameManager : MonoBehaviour
         
         return null;
     }
-    
     void LevelUp()
     {
         playerLevel++;
         xpToNextLevel += 50;
+        SaveAllData();
         Debug.Log($"Level Up! Now level {playerLevel}. Next level needs {xpToNextLevel} XP");
     }
 }

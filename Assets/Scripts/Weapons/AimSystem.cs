@@ -26,6 +26,15 @@ public class AimSystem : MonoBehaviour
 
 float bobTimer = 0f;
 
+
+    void Start()
+    {
+        // Load aim sensitivity from settings
+        if (SettingsManager.Instance != null)
+        {
+            aimSpeed = SettingsManager.Instance.GetAimSensitivity() * 200f;
+        }
+    }
     void Update()
     {
         // Camera zoom

@@ -13,9 +13,20 @@ MonoBehaviour:
   m_Name: MilitaryBase
   m_EditorClassIdentifier: Assembly-CSharp::POIData
   poiName: Military Base
-  levelScene: Tutorial
+  poiIcon: {fileID: 21300000, guid: c99d4799ab944f744bb0f5efebb7880e, type: 3}
+  levelScene: Hospital
   poiType: 0
   requiredPlayerLevel: 1
-  difficultyLevel: 1
-  zombieAmount: 3
-  surviveTime: 10
+  difficultyLevel: 3
+  baseZombieHealth: 50
+  healthMultiplier: 1
+  zombieDamage: 10
+  zombieSpeed: 0.5
+  maxZombies: 20
+  spawnInterval: 6
+  initialSpawnDelay: 0
+  zombieAmount: 5
+  zombiesToSpawn: 10
+  surviveTime: 120
+  baseMoneyReward: 100
+  baseXPReward: 50

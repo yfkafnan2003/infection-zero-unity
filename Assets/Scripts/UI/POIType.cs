@@ -4,5 +4,7 @@ public enum POIType
     KillZombies,
     RetrieveBox,
     ReachDestination,
-    BossFight
+    BossFight,
+    Arena,
+    ProtectDoor 
 }

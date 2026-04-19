@@ -23,7 +23,8 @@ public class ZombieSpawner : MonoBehaviour
     public float spawnRadius = 15f;
     public LayerMask groundLayer;
     public Transform playerTransform;
-    
+    private int currentRoundHealth = 50;
+
     [Header("Wave Settings")]
     public bool waveBasedSpawning = false;
     public int zombiesPerWave = 10;
@@ -77,7 +78,35 @@ public class ZombieSpawner : MonoBehaviour
         if (spawnCoroutine != null)
             StopCoroutine(spawnCoroutine);
     }
-    
+    public void ConfigureFromPOI(POIData poiData)
+    {
+        if (poiData == null) return;
+        
+        // Update spawn settings
+        maxZombies = poiData.maxZombies;
+        spawnInterval = poiData.GetSpawnInterval();
+        
+        // For wave-based spawning
+        if (waveBasedSpawning)
+        {
+            zombiesPerWave = poiData.zombiesToSpawn;
+        }
+        
+        // IMPORTANT: Disable wave-based spawning for Protect Door if it's causing issues
+        LevelManager lm = FindObjectOfType<LevelManager>();
+        if (lm != null && lm.currentPOIData != null && lm.currentPOIData.poiType == POIType.ProtectDoor)
+        {
+            // For Protect Door, disable wave-based spawning to prevent overflow
+            waveBasedSpawning = false;
+            Debug.Log("Protect Door mode - Wave-based spawning disabled");
+        }
+        
+        Debug.Log($"Spawner configured: Max Zombies={maxZombies}, Interval={spawnInterval}, WaveBased={waveBasedSpawning}");
+    }
+    public void SetRoundHealth(int health)
+    {
+        currentRoundHealth = health;
+    }
     IEnumerator SpawnRoutine()
     {
         while (isSpawning)
@@ -90,6 +119,7 @@ public class ZombieSpawner : MonoBehaviour
                     {
                         SpawnZombie();
                         zombiesSpawnedInWave++;
+                        // Use the spawnInterval from POI
                         yield return new WaitForSeconds(spawnInterval);
                     }
                     else
@@ -100,6 +130,7 @@ public class ZombieSpawner : MonoBehaviour
                 else
                 {
                     SpawnZombie();
+                    // Use the spawnInterval from POI
                     yield return new WaitForSeconds(spawnInterval);
                 }
             }
@@ -143,8 +174,26 @@ public class ZombieSpawner : MonoBehaviour
             return;
         }
         
-        // Spawn zombie
         GameObject newZombie = Instantiate(zombiePrefab, spawnPosition, Quaternion.identity);
+        
+        // Apply POI-based health if LevelManager has POI data
+        LevelManager levelManager = FindObjectOfType<LevelManager>();
+        ZombieHealth zombieHealth = newZombie.GetComponent<ZombieHealth>();
+        
+        if (levelManager != null && levelManager.currentPOIData != null)
+        {
+            // Check if this is Arena mode
+            ArenaManager arenaManager = FindObjectOfType<ArenaManager>();
+            if (arenaManager != null)
+            {
+                zombieHealth.health = arenaManager.GetZombieHealthForRound();
+                Debug.Log($"Arena zombie spawned with {zombieHealth.health} health");
+            }
+            else
+            {
+                zombieHealth.health = levelManager.currentPOIData.GetZombieHealth();
+            }
+        }
         
         // Ensure NavMeshAgent is enabled
         UnityEngine.AI.NavMeshAgent agent = newZombie.GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -173,7 +222,7 @@ public class ZombieSpawner : MonoBehaviour
         
         activeZombies.Add(newZombie);
         
-        ZombieHealth zombieHealth = newZombie.GetComponent<ZombieHealth>();
+        // REMOVED THE DUPLICATE DECLARATION - use existing zombieHealth variable
         if (zombieHealth != null)
         {
             StartCoroutine(WaitForZombieDeath(newZombie));
