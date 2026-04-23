@@ -69,7 +69,7 @@ public class POIData : ScriptableObject
     public int baseMoneyReward = 100;
     
     [Tooltip("Base XP reward")]
-    [Range(25, 10000)]
+    [Range(0, 10000)]
     public int baseXPReward = 50;
     
     [Header("Protect Door Settings")]

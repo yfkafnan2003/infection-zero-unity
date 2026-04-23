@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
-
+using System.Collections;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
@@ -172,7 +172,27 @@ public class GameManager : MonoBehaviour
                 completedPOIs.Add(poiName);
         }
         
+        // Start tutorial ONLY on fresh game (level 1, no money, no XP, no completed POIs)
+        bool isFreshStart = (playerLevel == 1 && playerMoney == 0 && currentXP == 0 && completedPOIs.Count == 0);
+        
+        if (isFreshStart)
+        {
+            Debug.Log("Fresh start detected - starting tutorial");
+            // Delay to ensure UI is loaded
+            StartCoroutine(StartTutorialAfterDelay(0.5f));
+        }
+        
         Debug.Log($"Game data loaded! Level: {playerLevel}, Money: ${playerMoney}, Energy: {currentEnergy}");
+    }
+
+    IEnumerator StartTutorialAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        
+        if (TutorialManager.Instance != null)
+        {
+            TutorialManager.Instance.StartTutorial("initial");
+        }
     }
     // Rest of your existing methods...
     public void ResetAllStoreItemsExceptGlocky()
@@ -190,6 +210,12 @@ public class GameManager : MonoBehaviour
         currentEnergy = maxEnergy;
         currentChainIndex = 0;
         completedPOIs.Clear();
+        
+        // Reset tutorial progress
+        if (TutorialManager.Instance != null)
+        {
+            TutorialManager.Instance.ResetTutorialProgress();
+        }
         
         SaveAllData();
         Debug.Log("Game progress reset! Level and money reset to default.");
@@ -276,17 +302,17 @@ public class GameManager : MonoBehaviour
     
     public bool IsPOIAvailable(POIData poi)
     {
+        // Special POIs are always available
         if (specialPOIs.Contains(poi))
         {
-            return !completedPOIs.Contains(poi.poiName);
+            return true;
         }
         
-        if (completedPOIs.Contains(poi.poiName))
-            return false;
-            
+        // Only check current chain
         if (currentChainIndex < poiChains.Count)
         {
             POIChain currentChain = poiChains[currentChainIndex];
+            // POI is available if it exists in current chain (regardless of completion status)
             return currentChain.poiList.Contains(poi);
         }
         

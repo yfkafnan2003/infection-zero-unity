@@ -25,7 +25,7 @@ public class MapMenuController : MonoBehaviour
     public float panelAnimationDuration = 0.3f;
     public AnimationCurve panelAnimationCurve = AnimationCurve.EaseInOut(0, 0, 1, 1);
     
-    private bool isMenuOpen = false;
+    private bool isMenuOpen = true;
     private CanvasGroup mainMenuCanvasGroup;
     private RectTransform mainMenuRectTransform;
     
@@ -42,9 +42,9 @@ public class MapMenuController : MonoBehaviour
             
             mainMenuRectTransform = mainMenuPanel.GetComponent<RectTransform>();
             
-            // Ensure menu starts closed
-            mainMenuPanel.SetActive(false);
-            mainMenuCanvasGroup.alpha = 0;
+            // Ensure menu starts OPEN
+            mainMenuPanel.SetActive(true);
+            mainMenuCanvasGroup.alpha = 1; // Also set alpha to 1 so it's visible
         }
         
         // Setup menu button listener

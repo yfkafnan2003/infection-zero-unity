@@ -35,6 +35,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Stadium.unity
     guid: 4fcb3a986bf52ab42a6868b813fe4ad9
+  - enabled: 1
+    path: Assets/Scenes/CreditScene.unity
+    guid: 62fb0e94ab0411649bd4771c6e3bacd2
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
   m_UseUCBPForAssetBundles: 0

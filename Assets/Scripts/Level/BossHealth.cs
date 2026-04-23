@@ -1,7 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using System.Collections;
+using UnityEngine.SceneManagement;
 public class BossHealth : MonoBehaviour
 {
     [Header("Boss Settings")]
@@ -187,15 +188,46 @@ public class BossHealth : MonoBehaviour
         if (col != null)
             col.enabled = false;
         
-        LevelManager levelManager = FindObjectOfType<LevelManager>();
-        if (levelManager != null)
+        // ADD THIS - Disable NavMeshAgent to stop movement
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (agent != null)
         {
-            levelManager.CompleteMission(true);
+            agent.isStopped = true;
+            agent.enabled = false;
         }
         
-        Destroy(gameObject, 5f);
+        // ADD THIS - Stop any ongoing coroutines
+        BossAttack bossAttack = GetComponent<BossAttack>();
+        if (bossAttack != null)
+        {
+            bossAttack.enabled = false;
+        }
+        
+        // Start coroutine to load credit scene with delay
+        StartCoroutine(LoadCreditSceneAfterDelay());
     }
-    
+
+    IEnumerator LoadCreditSceneAfterDelay()
+    {
+        // Wait for death animation to play
+        yield return new WaitForSeconds(3f);
+        
+        // Fade out to black
+        if (SceneFade.Instance != null)
+        {
+            yield return StartCoroutine(SceneFade.Instance.FadeOut());
+        }
+        
+        // Load credit scene
+        if (LoadingScreen.Instance != null)
+        {
+            LoadingScreen.Instance.LoadScene("CreditScene");
+        }
+        else
+        {
+            SceneManager.LoadScene("CreditScene");
+        }
+    }
     void UpdateHealthUI()
     {
         if (healthText != null)

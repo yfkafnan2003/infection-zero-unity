@@ -503,10 +503,9 @@ public class LevelManager : MonoBehaviour
             {
                 completionText.text = $"MISSION COMPLETE!\n\nRewards:\n${moneyReward}\n{xpReward} XP";
             }
-            
-            // Apply slow motion and fade in effect
-            SlowMotionAndFadeIn();
-        }
+                // Apply slow motion and fade in effect
+                SlowMotionAndFadeIn();
+            }
         else
         {
             // Player died
@@ -522,7 +521,7 @@ public class LevelManager : MonoBehaviour
             ShowDeathPanel();
         }
     }
-    
+
     void FreezeGame()
     {
         isGameFrozen = true;

@@ -17,7 +17,7 @@ MonoBehaviour:
   levelScene: Arena
   poiType: 5
   requiredPlayerLevel: 5
-  difficultyLevel: 75
+  difficultyLevel: 30
   baseZombieHealth: 50
   healthMultiplier: 1
   zombieDamage: 10
@@ -36,3 +36,6 @@ MonoBehaviour:
   zombieDoorDamage: 10
   doorRegenRate: 10
   healDistance: 5
+  bossMaxHealth: 1000
+  bossAttackDamage: 30
+  bossAttackCooldown: 3

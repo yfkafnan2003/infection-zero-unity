@@ -17,7 +17,7 @@ MonoBehaviour:
   levelScene: Bridge
   poiType: 2
   requiredPlayerLevel: 1
-  difficultyLevel: 3
+  difficultyLevel: 19
   baseZombieHealth: 60
   healthMultiplier: 1
   zombieDamage: 20

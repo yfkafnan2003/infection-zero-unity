@@ -84,7 +84,8 @@ public class MapManager : MonoBehaviour
             bool isAvailable = GameManager.instance.IsPOIAvailable(poi);
             bool isCompleted = GameManager.instance.IsPOICompleted(poi.poiName);
             
-            if (isCompleted || !isAvailable)
+            // Hide if NOT available OR completed
+            if (!isAvailable || isCompleted)
             {
                 if (poiButtons[i] != null)
                     poiButtons[i].SetActive(false);

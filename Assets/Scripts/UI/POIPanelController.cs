@@ -93,8 +93,8 @@ public class POIPanelController : MonoBehaviour
                 break;
                 
             case POIType.BossFight:
-                missionDetailsText.text = $"Boss Health: {poi.GetZombieHealth()}\n" +
-                                         $"Reward: ${poi.GetMoneyReward()} / {poi.GetXPReward()} XP";
+                missionDetailsText.text = $"DEFEAT THE INFECTION ZERO \n" +
+                                        $"KILL THE SOURCE OF VIRUS";
                 break;
                 
             case POIType.Arena:
@@ -105,7 +105,8 @@ public class POIPanelController : MonoBehaviour
             case POIType.ProtectDoor:
                 missionDetailsText.text = $"Protect Door for {poi.protectTime} seconds\n" +
                                         $"Reward: ${poi.GetMoneyReward()} / {poi.GetXPReward()} XP";
-                break;  
+                break; 
+
             default:
                 missionDetailsText.text = $"Difficulty: {GetDifficultyText(poi.difficultyLevel)}\n" +
                                          $"Reward: ${poi.GetMoneyReward()} / {poi.GetXPReward()} XP";
