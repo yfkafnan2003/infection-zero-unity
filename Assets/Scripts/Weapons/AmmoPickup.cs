@@ -3,8 +3,8 @@ using TMPro;
 using System.Collections.Generic;
 public class AmmoPickup : MonoBehaviour
 {
-    public AmmoType ammoType;
-    public int ammoAmount = 30;
+    public AmmoType ammoType; // This is now just for visual appearance
+    // No longer used for specific ammo amount
 
     public float rotateSpeed = 120f;
     public float bobSpeed = 2f;
@@ -25,6 +25,11 @@ public class AmmoPickup : MonoBehaviour
     
     private Vector3 startPosition;
     private float bobTimer = 0f;
+    
+    // Ammo range for each weapon type
+    private Vector2 pistolRange = new Vector2(20f, 40f);
+    private Vector2 shotgunRange = new Vector2(6f, 15f);
+    private Vector2 machinegunRange = new Vector2(30f, 60f);
     
     void Start()
     {
@@ -95,14 +100,22 @@ public class AmmoPickup : MonoBehaviour
         
         if (gun != null)
         {
-            gun.AddAmmo(ammoAmount, ammoType);
+            // Generate random ammo amounts for each weapon type
+            int pistolAmmo = Random.Range((int)pistolRange.x, (int)pistolRange.y + 1);
+            int shotgunAmmo = Random.Range((int)shotgunRange.x, (int)shotgunRange.y + 1);
+            int machinegunAmmo = Random.Range((int)machinegunRange.x, (int)machinegunRange.y + 1);
             
-            // Show pickup popup
+            // Add ammo to ALL weapon types
+            gun.AddAmmo(pistolAmmo, AmmoType.Pistol);
+            gun.AddAmmo(shotgunAmmo, AmmoType.Shotgun);
+            gun.AddAmmo(machinegunAmmo, AmmoType.Machinegun);
+            
+            // Show pickup popup (without showing amounts)
             ShowPickupPopup();
             
             // Play sound with volume control
             if (pickupSound != null)
-                AudioSource.PlayClipAtPoint(pickupSound, transform.position, 0.07f); // 0.5 = 50% volume
+                AudioSource.PlayClipAtPoint(pickupSound, transform.position, 0.07f);
             
             Destroy(gameObject);
         }
@@ -124,26 +137,11 @@ public class AmmoPickup : MonoBehaviour
         
         if (textComponent != null)
         {
-            string ammoTypeName = "";
-            switch (ammoType)
-            {
-                case AmmoType.Pistol:
-                    ammoTypeName = "PISTOL AMMO";
-                    textComponent.color = Color.yellow;
-                    break;
-                case AmmoType.Shotgun:
-                    ammoTypeName = "SHOTGUN AMMO";
-                    textComponent.color = new Color(1f, 0.5f, 0f);
-                    break;
-                case AmmoType.Machinegun:
-                    ammoTypeName = "MACHINE GUN AMMO";
-                    textComponent.color = Color.cyan;
-                    break;
-            }
-            
-            textComponent.text = $"+{ammoAmount} {ammoTypeName}";
-            textComponent.fontSize = 24;
+            // Simple text that just says ammo was increased
+            textComponent.text = "AMMO INCREASED!";
+            textComponent.fontSize = 28;
             textComponent.fontStyle = FontStyles.Bold;
+            textComponent.color = popupColor;
             
             // Position popup based on existing popups
             float yPos = -50f - (activePopups.Count * popupSpacing);

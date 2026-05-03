@@ -23,7 +23,7 @@ MonoBehaviour:
   zombieDamage: 10
   boxesToCollect: 3
   zombieSpeed: 0.5
-  maxZombies: 20
+  maxZombies: 8
   spawnInterval: 6
   initialSpawnDelay: 0
   zombieAmount: 10

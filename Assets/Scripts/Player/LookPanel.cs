@@ -4,8 +4,12 @@ using UnityEngine.EventSystems;
 public class LookPanel : MonoBehaviour, IDragHandler, IPointerDownHandler
 {
     public PlayerLook playerLook;
+    public float sensitivityMultiplier = 1f;
+    public float maxDelta = 10f; // Limit maximum delta to prevent extreme jumps
 
     Vector2 lastPosition;
+    Vector2 currentDelta;
+    Vector2 deltaVelocity;
 
     void Start()
     {
@@ -17,13 +21,16 @@ public class LookPanel : MonoBehaviour, IDragHandler, IPointerDownHandler
                 playerLook = mainCamera.GetComponent<PlayerLook>();
         }
         
-        Debug.Log($"LookPanel initialized - PlayerLook: {(playerLook != null ? "Found" : "Not Found")}");
+        // Get sensitivity from settings
+        if (SettingsManager.Instance != null)
+        {
+            sensitivityMultiplier = SettingsManager.Instance.GetNormalSensitivity() * 10f;
+        }
     }
 
     public void OnPointerDown(PointerEventData eventData)
     {
         lastPosition = eventData.position;
-        Debug.Log($"Pointer down at: {lastPosition}");
     }
 
     public void OnDrag(PointerEventData eventData)
@@ -31,9 +38,12 @@ public class LookPanel : MonoBehaviour, IDragHandler, IPointerDownHandler
         Vector2 delta = eventData.position - lastPosition;
         lastPosition = eventData.position;
         
-        // Only log every 10 frames to avoid spam
-        if (Time.frameCount % 30 == 0)
-            Debug.Log($"Drag delta: {delta}, Sensitivity from PlayerLook: {playerLook?.sensitivity}");
+        // Clamp delta to prevent extreme jumps
+        delta.x = Mathf.Clamp(delta.x, -maxDelta, maxDelta);
+        delta.y = Mathf.Clamp(delta.y, -maxDelta, maxDelta);
+        
+        // Apply multiplier
+        delta *= sensitivityMultiplier;
         
         if (playerLook != null)
         {

@@ -18,12 +18,12 @@ MonoBehaviour:
   poiType: 6
   requiredPlayerLevel: 1
   difficultyLevel: 6
-  baseZombieHealth: 30
+  baseZombieHealth: 50
   healthMultiplier: 1
   zombieDamage: 10
   boxesToCollect: 3
   zombieSpeed: 0.5
-  maxZombies: 30
+  maxZombies: 10
   spawnInterval: 5
   initialSpawnDelay: 0
   zombieAmount: 30
@@ -31,7 +31,7 @@ MonoBehaviour:
   surviveTime: 60
   baseMoneyReward: 250
   baseXPReward: 200
-  protectTime: 90
+  protectTime: 120
   doorHealth: 100
   zombieDoorDamage: 10
   doorRegenRate: 10

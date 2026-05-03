@@ -230,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1614082901}
+  m_Material: {fileID: 560537855}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -560,7 +560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1895180302}
+  m_Material: {fileID: 564371614}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -597,6 +597,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (26)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -646,46 +650,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1299481002}
   m_SourcePrefab: {fileID: 100100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
---- !u!21 &17473322
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &24525046
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -697,6 +661,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_Name
       value: Road Lane_03 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -788,6 +756,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -987,6 +959,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -583.40894
@@ -1122,6 +1098,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.5287
@@ -1182,6 +1162,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -622.8784
@@ -1241,6 +1225,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1364,6 +1352,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential_color01 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -545.73846
@@ -1443,6 +1435,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
   m_PrefabInstance: {fileID: 99168834}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &102293506
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &104920818
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1454,6 +1486,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_Name
       value: Props_Hydrant (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1616,6 +1652,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_House_04_color02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 10ba41f0223c3104bad126af2b380971, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 10ba41f0223c3104bad126af2b380971, type: 3}
       propertyPath: m_LocalPosition.x
       value: -552.1011
@@ -1675,6 +1715,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1794,9 +1838,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
       propertyPath: m_Name
       value: Vehicle_Car_color02_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: 12dd350c4c7e7754b807b38a22b4d078, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1888,6 +1956,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_Name
       value: Building_Restaurant (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2001,6 +2073,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 3600522763717905412, guid: d7c946d82d69ebb45be3de07feafc18d, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -2713,6 +2801,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential_color01 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_LocalPosition.x
       value: -565.94794
@@ -2852,6 +2944,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 8246415053061962608, guid: bb7e15adb31a07b4291515eeb262eeac, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -3082,6 +3190,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 8246415053061962608, guid: bb7e15adb31a07b4291515eeb262eeac, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -3290,6 +3414,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Natures_Cube Tree
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b680e0f7699a254c84ed6737b7eb53d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b680e0f7699a254c84ed6737b7eb53d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -567.7798
@@ -3380,6 +3508,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color02 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3472,6 +3604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Bench_2 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
       value: -594.8284
@@ -3551,46 +3687,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
   m_PrefabInstance: {fileID: 165875512}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &168707980
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &169958911
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3602,6 +3698,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3663,6 +3763,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (12)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.4887
@@ -3722,6 +3826,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_Name
       value: Building Sky_small_color02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4045,46 +4153,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 186592730}
   m_CullTransparentMesh: 1
---- !u!21 &187229076
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 100, g: 100, b: 30, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &193399890
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4096,6 +4164,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4341,6 +4413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Sky_small_color02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: cc0981408e7c8db4f9f80a57938fd5e3, type: 3}
       propertyPath: m_LocalPosition.x
       value: -562.58844
@@ -4559,7 +4635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1713752467}
+  m_Material: {fileID: 466960269}
   m_Color: {r: 0.764151, g: 0.5154415, b: 0.5154415, a: 0.2627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -4596,6 +4672,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
       propertyPath: m_Name
       value: Building_Clothing
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4814,9 +4894,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1421495231}
-  - {fileID: 2120100532}
-  - {fileID: 616202982}
-  - {fileID: 1517984368}
   - {fileID: 741895875}
   - {fileID: 1943533328}
   - {fileID: 51263177}
@@ -4892,6 +4969,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (43)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalScale.x
@@ -4995,6 +5076,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
       propertyPath: m_Name
       value: Building_Bar (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5223,6 +5308,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5515,46 +5604,105 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 313140779}
   m_CullTransparentMesh: 1
---- !u!21 &317773322
-Material:
-  serializedVersion: 8
+--- !u!1001 &317710743
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1988790846}
+    m_Modifications:
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_Name
+      value: Road Lane_03 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 5.0672
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -583.40894
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -815.07
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -46.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.000000021855694
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 317710746}
+  m_SourcePrefab: {fileID: 100100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+--- !u!4 &317710744 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+  m_PrefabInstance: {fileID: 317710743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &317710745 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+  m_PrefabInstance: {fileID: 317710743}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &317710746
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
+  m_GameObject: {fileID: 317710745}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 20, y: 0.20000087, z: 20}
+  m_Center: {x: 0, y: 0.1, z: 0}
 --- !u!1001 &319543845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5566,6 +5714,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (21)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5626,6 +5778,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -5706,6 +5862,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
   m_PrefabInstance: {fileID: 330929421}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &334104148
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &339213620
 GameObject:
   m_ObjectHideFlags: 0
@@ -5986,6 +6182,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5578553844187211773, guid: 64eb43c9d592ae84e996a70cb5e728d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6200452739165028569, guid: 64eb43c9d592ae84e996a70cb5e728d8, type: 3}
       propertyPath: healthText
       value: 
@@ -6013,6 +6213,10 @@ PrefabInstance:
     - target: {fileID: 7713543378485989540, guid: 64eb43c9d592ae84e996a70cb5e728d8, type: 3}
       propertyPath: rotation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9094384787301276339, guid: 64eb43c9d592ae84e996a70cb5e728d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -6296,7 +6500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1659686858}
+  m_Material: {fileID: 1566529648}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -6386,6 +6590,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 8246415053061962608, guid: bb7e15adb31a07b4291515eeb262eeac, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -6561,46 +6781,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!21 &380628231
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &392823012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6609,9 +6789,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
       propertyPath: m_Name
       value: Vehicle_Bus_color03_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6735,6 +6939,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Bar
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3667b1c4d7f532647b9156782c0c80f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: -561.7388
@@ -6794,6 +7002,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
       propertyPath: m_Name
       value: Building_Factory
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7098,6 +7310,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Street Light (9)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
       value: -571.21844
@@ -7208,6 +7424,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2080685703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!21 &426012531
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &429632660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7219,6 +7475,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7310,6 +7570,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (34)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7499,6 +7763,46 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!21 &466960269
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &469457990
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7510,6 +7814,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2dbee28eacba7dd42845e0153c4da642, type: 3}
       propertyPath: m_Name
       value: Building_House_03_color03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2dbee28eacba7dd42845e0153c4da642, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2dbee28eacba7dd42845e0153c4da642, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7570,6 +7878,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_Name
       value: Building_Restaurant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7768,6 +8080,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Fast Food (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
       value: -617.58844
@@ -7859,6 +8175,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (16)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -7918,6 +8238,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_Name
       value: Natures_Fir Tree (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8041,6 +8365,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential_color02
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -580.5843
@@ -8100,6 +8428,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8274,7 +8606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 781495759}
+  m_Material: {fileID: 2010350219}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -8401,6 +8733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Bus Stop
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8fa324388c16b5c4eac9846338b35b17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8fa324388c16b5c4eac9846338b35b17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -568.31573
@@ -8499,6 +8835,7 @@ MonoBehaviour:
   playerBody: {fileID: 130823844}
   sensitivity: 0.5
   invertY: 0
+  smoothTime: 0.1
 --- !u!20 &538823847
 Camera:
   m_ObjectHideFlags: 0
@@ -8709,7 +9046,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1252477300}
+  m_Material: {fileID: 1303723454}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -8836,6 +9173,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Fast Food (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
       value: -562.28845
@@ -8884,6 +9225,86 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 614437237}
   m_SourcePrefab: {fileID: 100100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+--- !u!21 &560537855
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!21 &561081075
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 100, g: 100, b: 30, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &561482945
 GameObject:
   m_ObjectHideFlags: 0
@@ -8959,6 +9380,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 561482945}
   m_CullTransparentMesh: 1
+--- !u!21 &564371614
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &564948557 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
@@ -9001,6 +9462,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9093,6 +9558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Restaurant
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.2816
@@ -9141,46 +9610,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1361635899}
   m_SourcePrefab: {fileID: 100100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
---- !u!21 &587809522
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 147.38, g: 100, b: 30, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &592943339
 GameObject:
   m_ObjectHideFlags: 0
@@ -9302,7 +9731,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &610585151
 BoxCollider:
@@ -9371,144 +9800,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
   m_PrefabInstance: {fileID: 553149643}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &616202981
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 616202982}
-  - component: {fileID: 616202984}
-  - component: {fileID: 616202983}
-  m_Layer: 5
-  m_Name: CT (1)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &616202982
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616202981}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0980269, y: 1.0980269, z: 1.0980269}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 706595884}
-  m_Father: {fileID: 268614039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 615.6, y: 129.7}
-  m_SizeDelta: {x: 498.3, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &616202983
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616202981}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: Google
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_sharedMaterial: {fileID: -4785058880587564910, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 28.8
-  m_fontSizeBase: 28.8
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &616202984
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 616202981}
-  m_CullTransparentMesh: 1
 --- !u!1001 &619110685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9520,6 +9811,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_Name
       value: Building_Fast Food (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9644,9 +9939,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
       propertyPath: m_Name
       value: Vehicle_Pick up Truck_color01_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: fc2b2b65264c13f48a615fa7dbc2ef24, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9738,6 +10057,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_Name
       value: Building Sky_big_color03 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_LocalPosition.x
@@ -10233,91 +10556,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705127982}
   m_CullTransparentMesh: 1
---- !u!1 &706595883
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 706595884}
-  - component: {fileID: 706595885}
-  m_Layer: 5
-  m_Name: Toggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &706595884
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706595883}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7816384, y: 2.7816384, z: 2.7816384}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1120731255}
-  m_Father: {fileID: 616202982}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 9}
-  m_SizeDelta: {x: 25.6, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &706595885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 706595883}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1120731256}
-  toggleTransition: 1
-  graphic: {fileID: 980159061}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
 --- !u!1001 &714337595
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10370,6 +10608,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -11205,6 +11459,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (30)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -583.50867
@@ -11359,46 +11617,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
   m_PrefabInstance: {fileID: 1289818127}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &781495759
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 210, g: 100, b: 30, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &803632315 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
@@ -11472,6 +11690,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (39)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11564,6 +11786,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (25)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -621.7287
@@ -11624,6 +11850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (31)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.48865
@@ -11683,6 +11913,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_Name
       value: Natures_Fir Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11810,6 +12044,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11998,6 +12236,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (15)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.4887
@@ -12057,6 +12299,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12169,81 +12415,6 @@ MonoBehaviour:
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: bf10c474d1f3d90479da989fdf9e5f28, type: 2}
   m_BuildHeightMesh: 0
---- !u!1 &874155406
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 874155407}
-  - component: {fileID: 874155409}
-  - component: {fileID: 874155408}
-  m_Layer: 5
-  m_Name: Checkmark
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &874155407
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874155406}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 964174893}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &874155408
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874155406}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &874155409
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 874155406}
-  m_CullTransparentMesh: 1
 --- !u!1 &876848501
 GameObject:
   m_ObjectHideFlags: 0
@@ -12334,6 +12505,46 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!21 &885582560
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 147.38, g: 100, b: 30, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &886214105
 GameObject:
   m_ObjectHideFlags: 0
@@ -12424,91 +12635,6 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
---- !u!1 &895204472
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 895204473}
-  - component: {fileID: 895204474}
-  m_Layer: 5
-  m_Name: Toggle
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &895204473
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895204472}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.7816384, y: 2.7816384, z: 2.7816384}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 964174893}
-  m_Father: {fileID: 1517984368}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: 9}
-  m_SizeDelta: {x: 25.6, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &895204474
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 895204472}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9085046f02f69544eb97fd06b6048fe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Toggle
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 964174894}
-  toggleTransition: 1
-  graphic: {fileID: 874155408}
-  m_Group: {fileID: 0}
-  onValueChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_IsOn: 1
 --- !u!1 &903929321 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
@@ -12551,6 +12677,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (33)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12705,6 +12835,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Sky_big_color03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_LocalPosition.x
       value: -541.78845
@@ -12827,6 +12961,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (32)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -12918,6 +13056,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Sky_small_color03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -617.7428
@@ -12997,82 +13139,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
   m_PrefabInstance: {fileID: 962730001}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &964174892
-GameObject:
+--- !u!21 &971232936
+Material:
+  serializedVersion: 8
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 964174893}
-  - component: {fileID: 964174895}
-  - component: {fileID: 964174894}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &964174893
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964174892}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 874155407}
-  m_Father: {fileID: 895204473}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &964174894
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964174892}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &964174895
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 964174892}
-  m_CullTransparentMesh: 1
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &972098146
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13084,6 +13190,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (37)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -13195,81 +13305,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
   m_PrefabInstance: {fileID: 53467142}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &980159059
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 980159060}
-  - component: {fileID: 980159062}
-  - component: {fileID: 980159061}
-  m_Layer: 5
-  m_Name: Checkmark
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &980159060
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980159059}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1120731255}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &980159061
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980159059}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &980159062
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 980159059}
-  m_CullTransparentMesh: 1
 --- !u!1 &985677895
 GameObject:
   m_ObjectHideFlags: 0
@@ -13485,6 +13520,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 3600522763717905412, guid: d7c946d82d69ebb45be3de07feafc18d, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -13738,6 +13789,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -14175,7 +14242,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 587809522}
+  m_Material: {fileID: 885582560}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -14338,6 +14405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (29)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -623.5487
@@ -14397,6 +14468,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color02 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14533,6 +14608,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Street Light (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
       value: -594.5795
@@ -14655,6 +14734,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -583.40894
@@ -14706,122 +14789,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 869889126}
   m_SourcePrefab: {fileID: 100100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
---- !u!1 &1120731254
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1120731255}
-  - component: {fileID: 1120731257}
-  - component: {fileID: 1120731256}
-  m_Layer: 5
-  m_Name: Background
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1120731255
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120731254}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 980159060}
-  m_Father: {fileID: 706595884}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 10, y: -10}
-  m_SizeDelta: {x: 20, y: 20}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1120731256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120731254}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &1120731257
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1120731254}
-  m_CullTransparentMesh: 1
---- !u!21 &1124717367
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1136057503 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
@@ -14864,6 +14831,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_Name
       value: Natures_Fir Tree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14955,6 +14926,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15140,6 +15115,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (12)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15369,6 +15348,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential_color02 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
       value: -592.8335
@@ -15459,6 +15442,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (36)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15551,6 +15538,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Natures_Fir Tree (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_LocalPosition.x
       value: -571.69727
@@ -15641,6 +15632,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
       propertyPath: m_Name
       value: Natures_Bush_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 31bbda51eeab02f44a8e92a7da2f5ff8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15733,6 +15728,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Restaurant (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_LocalPosition.x
       value: -607.0611
@@ -15792,6 +15791,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -15883,6 +15886,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
       propertyPath: m_Name
       value: Road Intersection_02
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e5a98a4c41704e24eb7e4dafcc7c42b4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16042,7 +16049,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 317773322}
+  m_Material: {fileID: 971232936}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -16079,6 +16086,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_Name
       value: Road Lane_03 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalScale.z
@@ -16364,6 +16375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookPanel
   playerLook: {fileID: 538823846}
+  sensitivityMultiplier: 1
+  maxDelta: 10
 --- !u!114 &1202015967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17043,7 +17056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 187229076}
+  m_Material: {fileID: 561081075}
   m_Color: {r: 0.5943396, g: 0.5943396, b: 0.5943396, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -17080,6 +17093,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (28)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17247,6 +17264,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Chicken Shop
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.98846
@@ -17295,7 +17316,7 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1194806714}
   m_SourcePrefab: {fileID: 100100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
---- !u!21 &1252477300
+--- !u!21 &1250927774
 Material:
   serializedVersion: 8
   m_ObjectHideFlags: 0
@@ -17332,7 +17353,7 @@ Material:
     - _StencilWriteMask: 255
     - _UseUIAlphaClip: 0
     m_Colors:
-    - _WidthHeightRadius: {r: 210.4684, g: 100, b: 30, a: 0}
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
 --- !u!1 &1258689603
@@ -17437,6 +17458,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (38)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.5287
@@ -17528,6 +17553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (13)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.5287
@@ -17587,6 +17616,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17785,6 +17818,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Lane_03 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.3784
@@ -17844,6 +17881,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_Name
       value: Building Sky_big_color03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_LocalPosition.x
@@ -17968,6 +18009,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1297752976}
   m_CullTransparentMesh: 1
+--- !u!21 &1299463064
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1299481001 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
@@ -18010,6 +18091,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (18)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18090,6 +18175,46 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
   m_PrefabInstance: {fileID: 1364944807}
   m_PrefabAsset: {fileID: 0}
+--- !u!21 &1303723454
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 210.4684, g: 100, b: 30, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &1304671172
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18098,9 +18223,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
       propertyPath: m_Name
       value: Vehicle_Car_color01_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: d267fbb9e36c6e4458c9a8756d725a79, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18192,6 +18341,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_Name
       value: Props_Hydrant
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18398,6 +18551,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Natures_Big Tree (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -570.8323
@@ -18488,6 +18645,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18712,6 +18873,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (40)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -18946,6 +19111,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (22)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -621.7287
@@ -19112,6 +19281,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Props_Street Light (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
       value: -571.21844
@@ -19251,6 +19424,22 @@ PrefabInstance:
       propertyPath: ammoDropPrefab
       value: 
       objectReference: {fileID: 3600522763717905412, guid: d7c946d82d69ebb45be3de07feafc18d, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -19472,6 +19661,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_Name
       value: Road Lane_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19781,6 +19974,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -19840,6 +20037,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_Name
       value: Building_Chicken Shop (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -19931,6 +20132,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20121,7 +20326,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 2064062580}
+  m_Material: {fileID: 1250927774}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -20158,6 +20363,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
       propertyPath: m_Name
       value: Building_Factory (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20667,7 +20876,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1124717367}
+  m_Material: {fileID: 334104148}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -20704,6 +20913,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20831,6 +21044,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -20980,7 +21197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 380628231}
+  m_Material: {fileID: 2010237618}
   m_Color: {r: 0.3584906, g: 0.31621575, b: 0.31621575, a: 0.7607843}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -21017,6 +21234,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color02 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21166,7 +21387,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1010
+      value: 959.3965
       objectReference: {fileID: 0}
     - target: {fileID: 8170153791668043268, guid: 0d230cc8be529a542a08cb878ab14b18, type: 3}
       propertyPath: m_SizeDelta.y
@@ -21337,7 +21558,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1852171616}
+  m_Material: {fileID: 1299463064}
   m_Color: {r: 0.764151, g: 0.5154415, b: 0.5154415, a: 0.2627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -21374,6 +21595,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color01
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21435,6 +21660,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (14)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -583.50867
@@ -21483,144 +21712,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 32200187}
   m_SourcePrefab: {fileID: 100100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
---- !u!1 &1517984367
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1517984368}
-  - component: {fileID: 1517984370}
-  - component: {fileID: 1517984369}
-  m_Layer: 5
-  m_Name: CT (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &1517984368
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517984367}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0980269, y: 1.0980269, z: 1.0980269}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 895204473}
-  m_Father: {fileID: 268614039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 615.6, y: 57}
-  m_SizeDelta: {x: 498.3, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1517984369
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517984367}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: FaceBook
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_sharedMaterial: {fileID: -4785058880587564910, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 28.8
-  m_fontSizeBase: 28.8
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &1517984370
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1517984367}
-  m_CullTransparentMesh: 1
 --- !u!1 &1522537567
 GameObject:
   m_ObjectHideFlags: 0
@@ -21792,7 +21883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 168707980}
+  m_Material: {fileID: 426012531}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -21829,6 +21920,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_Name
       value: Building_Restaurant (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21878,6 +21973,46 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 142587003}
   m_SourcePrefab: {fileID: 100100000, guid: bc532b78ce09f234ea01da2deecfe035, type: 3}
+--- !u!21 &1551308033
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1561653474 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
@@ -22089,6 +22224,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22325,7 +22464,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 1960852293}
+  m_Material: {fileID: 102293506}
   m_Color: {r: 1, g: 1, b: 1, a: 0.36862746}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -22351,6 +22490,46 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1565219688}
   m_CullTransparentMesh: 1
+--- !u!21 &1566529648
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1 &1567016705
 GameObject:
   m_ObjectHideFlags: 0
@@ -22453,6 +22632,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.4887
@@ -22512,6 +22695,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_Name
       value: Props_Hydrant (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: e0e851c58997b9c438fae494e3412749, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22733,9 +22920,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
       propertyPath: m_Name
       value: Vehicle_Ambulance_separate
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: b3f4ad6e44f81784ba0ebe95aadf2a7d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22816,46 +23027,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.933593, y: 2.747776, z: 6.808762}
   m_Center: {x: 0.0007238388, y: 0.3910599, z: -0.021312237}
---- !u!21 &1614082901
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1616185465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
@@ -22898,6 +23069,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (11)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -22958,6 +23133,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_Name
       value: Building Sky_big_color03
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23049,6 +23228,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (35)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23270,6 +23453,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Residential_color03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
       propertyPath: m_LocalPosition.x
       value: -548.4704
@@ -23349,46 +23536,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 0064eb002f3790247969e12119bbf9d2, type: 3}
   m_PrefabInstance: {fileID: 1655325836}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1659686858
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1672660598
 GameObject:
   m_ObjectHideFlags: 0
@@ -23553,6 +23700,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_Name
       value: Building_Chicken Shop (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23720,6 +23871,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (19)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -23779,6 +23934,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_Name
       value: Building_Fast Food (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -23870,6 +24029,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_Name
       value: Building_Chicken Shop (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24096,6 +24259,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (20)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -24156,6 +24323,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door 1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 263018048299708434, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 643378309347666600, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
       propertyPath: m_LocalPosition.x
       value: -47.013
@@ -24199,6 +24370,10 @@ PrefabInstance:
     - target: {fileID: 2720577123989964619, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
       propertyPath: rotation
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528801655930719580, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4960561674185090740, guid: dce2ad178b92e7640a964df9ce2f1c74, type: 3}
       propertyPath: m_LocalRotation.w
@@ -24375,46 +24550,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7429485, y: 3.0900998, z: 0.15378585}
   m_Center: {x: 0, y: 1.5450499, z: -0.042851448}
---- !u!21 &1713752467
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &1714166504
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24426,6 +24561,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24517,6 +24656,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24636,9 +24779,33 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1988790846}
     m_Modifications:
+    - target: {fileID: 100000, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
       propertyPath: m_Name
       value: Vehicle_Bus_color03_separate (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100010, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400008, guid: e1697ef5073defa458e40968ffff2b30, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24730,6 +24897,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -24948,6 +25119,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (10)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.5287
@@ -25039,6 +25214,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building Sky_small_color03
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 35807f23e7899e541b60b2fb2bbb51ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: -562.44275
@@ -25098,6 +25277,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25576,6 +25759,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -603.5287
@@ -25635,6 +25822,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (24)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25738,6 +25929,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color02 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 246bcb60ae5be3744a4ea86bab749f44, type: 3}
       propertyPath: m_LocalPosition.x
@@ -25952,46 +26147,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1850818665}
   m_CullTransparentMesh: 1
---- !u!21 &1852171616
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1854457908 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 1d3fc70685d97b748ac1264d8da02551, type: 3}
@@ -26034,6 +26189,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_Name
       value: Building_Fast Food
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26094,6 +26253,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_Name
       value: Building_Chicken Shop (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26186,6 +26349,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Fast Food (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4dc7028a3a83758439585b7c7c98cb27, type: 3}
       propertyPath: m_LocalPosition.x
       value: -562.28845
@@ -26265,46 +26432,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: f6674c1362ba984468bc1e71a2323d66, type: 3}
   m_PrefabInstance: {fileID: 402193762}
   m_PrefabAsset: {fileID: 0}
---- !u!21 &1895180302
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1895751771
 GameObject:
   m_ObjectHideFlags: 0
@@ -26536,7 +26663,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!65 &1928542694
 BoxCollider:
@@ -26585,6 +26712,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_Name
       value: Natures_Big Tree (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b82e76f4092b7d24aaeecddf36fe8d3b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -26945,46 +27076,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1952066623}
   m_CullTransparentMesh: 1
---- !u!21 &1960852293
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1 &1960945165
 GameObject:
   m_ObjectHideFlags: 0
@@ -27181,6 +27272,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (41)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -563.48865
@@ -27302,6 +27397,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_Name
       value: Props_Bench_2 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 6458a4c9f91f22741a5064b5b7cfd892, type: 3}
       propertyPath: m_LocalPosition.x
@@ -27561,7 +27660,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1988790846
 Transform:
@@ -27579,6 +27678,7 @@ Transform:
   - {fileID: 869889125}
   - {fileID: 196005358}
   - {fileID: 414574309}
+  - {fileID: 317710744}
   - {fileID: 978880316}
   - {fileID: 632532893}
   - {fileID: 1506367537}
@@ -27873,6 +27973,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (23)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -621.7287
@@ -27932,6 +28036,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_Name
       value: Road Lane_03 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28029,6 +28137,22 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: idleSounds.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 5e81b1d5f975d0e4bb3e4cd9ea555b8c, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8300000, guid: ddb7db3cf4bea2a42889e2e450a33784, type: 3}
+    - target: {fileID: 3418266795422801386, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
+      propertyPath: 'idleSounds.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
     - target: {fileID: 3421001074392970453, guid: deed00b53f89a9649a6dfdafb6656700, type: 3}
       propertyPath: m_Layer
       value: 10
@@ -28239,6 +28363,86 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2009160915}
   m_CullTransparentMesh: 1
+--- !u!21 &2010237618
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 400, g: 399.99994, b: 396.2, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
+--- !u!21 &2010350219
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: UI/RoundedCorners/RoundedCorners
+  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _ColorMask: 15
+    - _Stencil: 0
+    - _StencilComp: 8
+    - _StencilOp: 0
+    - _StencilReadMask: 255
+    - _StencilWriteMask: 255
+    - _UseUIAlphaClip: 0
+    m_Colors:
+    - _WidthHeightRadius: {r: 210, g: 100, b: 30, a: 0}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
 --- !u!1001 &2016371855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28250,6 +28454,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28469,7 +28677,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
-  m_Material: {fileID: 17473322}
+  m_Material: {fileID: 1551308033}
   m_Color: {r: 0.764151, g: 0.5154415, b: 0.5154415, a: 0.2627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
@@ -28582,6 +28790,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Road Concrete Tile (27)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
       value: -543.4687
@@ -28641,6 +28853,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_Name
       value: Natures_Fir Tree (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 2509cc5763ca17f4598bf61fd585a93e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28855,46 +29071,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2061556980}
   m_CullTransparentMesh: 1
---- !u!21 &2064062580
-Material:
-  serializedVersion: 8
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: UI/RoundedCorners/RoundedCorners
-  m_Shader: {fileID: 4800000, guid: 0bd2ec5d73751e34a814274a454bec41, type: 3}
-  m_Parent: {fileID: 0}
-  m_ModifiedSerializedProperties: 0
-  m_ValidKeywords: []
-  m_InvalidKeywords: []
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_LockedProperties: 
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Ints: []
-    m_Floats:
-    - _ColorMask: 15
-    - _Stencil: 0
-    - _StencilComp: 8
-    - _StencilOp: 0
-    - _StencilReadMask: 255
-    - _StencilWriteMask: 255
-    - _UseUIAlphaClip: 0
-    m_Colors:
-    - _WidthHeightRadius: {r: 120, g: 120, b: 120, a: 0}
-  m_BuildTextureStacks: []
-  m_AllowLocking: 1
 --- !u!1001 &2065579928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28906,6 +29082,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_Name
       value: Road Lane_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 85348f60323277544b2b17a2d5c20f17, type: 3}
       propertyPath: m_LocalPosition.x
@@ -28966,6 +29146,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (42)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29151,6 +29335,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Clothing (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 0c7bcaa85c9494849bc7a0a18b7f3324, type: 3}
       propertyPath: m_LocalPosition.x
       value: -617.08844
@@ -29241,6 +29429,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_Name
       value: Building_Residential_color01 (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 921b4e33443ab5943afa3c4841e74cae, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29408,6 +29600,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Building_Chicken Shop (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 8b3eca4c34b9e1148a3c4d42a48dd5b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: -562.1884
@@ -29467,6 +29663,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29589,6 +29789,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_Name
       value: Props_Street Light (13)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: b8ee657c6800ab849bb30b4375d02323, type: 3}
       propertyPath: m_LocalPosition.x
@@ -29881,143 +30085,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2117609113}
   m_CullTransparentMesh: 1
---- !u!1 &2120100531
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2120100532}
-  - component: {fileID: 2120100534}
-  - component: {fileID: 2120100533}
-  m_Layer: 5
-  m_Name: CT
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &2120100532
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120100531}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0980269, y: 1.0980269, z: 1.0980269}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 268614039}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 567.1, y: 198.3}
-  m_SizeDelta: {x: 498.3, y: 50}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2120100533
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120100531}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_text: CONNECT
-  m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_sharedMaterial: {fileID: -4785058880587564910, guid: 16593f9ab39723c47b99aeb879f05d34, type: 2}
-  m_fontSharedMaterials: []
-  m_fontMaterial: {fileID: 0}
-  m_fontMaterials: []
-  m_fontColor32:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
-  m_enableVertexGradient: 0
-  m_colorMode: 3
-  m_fontColorGradient:
-    topLeft: {r: 1, g: 1, b: 1, a: 1}
-    topRight: {r: 1, g: 1, b: 1, a: 1}
-    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
-    bottomRight: {r: 1, g: 1, b: 1, a: 1}
-  m_fontColorGradientPreset: {fileID: 0}
-  m_spriteAsset: {fileID: 0}
-  m_tintAllSprites: 0
-  m_StyleSheet: {fileID: 0}
-  m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
-  m_faceColor:
-    serializedVersion: 2
-    rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
-  m_fontWeight: 400
-  m_enableAutoSizing: 0
-  m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 6
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
-  m_textAlignment: 65535
-  m_characterSpacing: 0
-  m_characterHorizontalScale: 1
-  m_wordSpacing: 0
-  m_lineSpacing: 0
-  m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
-  m_charWidthMaxAdj: 0
-  m_TextWrappingMode: 1
-  m_wordWrappingRatios: 0.4
-  m_overflowMode: 0
-  m_linkedTextComponent: {fileID: 0}
-  parentLinkedComponent: {fileID: 0}
-  m_enableKerning: 0
-  m_ActiveFontFeatures: 6e72656b
-  m_enableExtraPadding: 0
-  checkPaddingRequired: 0
-  m_isRichText: 1
-  m_EmojiFallbackSupport: 1
-  m_parseCtrlCharacters: 1
-  m_isOrthographic: 1
-  m_isCullingEnabled: 0
-  m_horizontalMapping: 0
-  m_verticalMapping: 0
-  m_uvLineOffset: 0
-  m_geometrySortingOrder: 0
-  m_IsTextObjectScaleStatic: 0
-  m_VertexBufferAutoSizeReduction: 0
-  m_useMaxVisibleDescender: 1
-  m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
-  m_isUsingLegacyAnimationComponent: 0
-  m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
-  m_baseMaterial: {fileID: 0}
-  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!222 &2120100534
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2120100531}
-  m_CullTransparentMesh: 1
 --- !u!1001 &2142445838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -30029,6 +30096,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_Name
       value: Road Concrete Tile (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: d34e8533c8de8ec45869f9144584d929, type: 3}
       propertyPath: m_LocalPosition.x

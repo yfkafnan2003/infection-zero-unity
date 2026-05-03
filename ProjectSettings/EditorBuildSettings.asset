@@ -6,11 +6,14 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/OpeningScene.unity
+    guid: f8dff14df9481dd41ac4a0ff13716612
+  - enabled: 1
     path: Assets/Scenes/MapScene.unity
     guid: 9424dc428b10e5f468fe0b00ef57a6c5
   - enabled: 1
     path: Assets/Scenes/Hospital.unity
-    guid: ff7b86a2888c8d9459d276b2f31ca330
+    guid: e126cf753d87c4c45870ecb3e149f988
   - enabled: 1
     path: Assets/Scenes/City B Zone.unity
     guid: 445f1161e98604742bbb99e876c02d8e

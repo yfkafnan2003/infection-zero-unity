@@ -18,7 +18,7 @@ MonoBehaviour:
   poiType: 1
   requiredPlayerLevel: 1
   difficultyLevel: 13
-  baseZombieHealth: 40
+  baseZombieHealth: 60
   healthMultiplier: 1
   zombieDamage: 10
   boxesToCollect: 3

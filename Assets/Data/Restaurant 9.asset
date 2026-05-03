@@ -18,17 +18,17 @@ MonoBehaviour:
   poiType: 0
   requiredPlayerLevel: 1
   difficultyLevel: 18
-  baseZombieHealth: 50
+  baseZombieHealth: 80
   healthMultiplier: 1
   zombieDamage: 10
   boxesToCollect: 3
   zombieSpeed: 0.5
-  maxZombies: 30
+  maxZombies: 12
   spawnInterval: 3
   initialSpawnDelay: 0
-  zombieAmount: 20
+  zombieAmount: 5
   zombiesToSpawn: 10
-  surviveTime: 180
+  surviveTime: 300
   baseMoneyReward: 400
   baseXPReward: 500
   protectTime: 60

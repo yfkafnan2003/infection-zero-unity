@@ -279,20 +279,24 @@ public class ZombieSpawner : MonoBehaviour
     
     public void ResetSpawner()
     {
-        foreach (GameObject zombie in activeZombies)
-        {
-            if (zombie != null)
-                Destroy(zombie);
-        }
+        // Clear the active zombies list without destroying them (they're already being destroyed by ArenaManager)
         activeZombies.Clear();
         
+        // Reset wave counters
         currentWave = 0;
         zombiesSpawnedInWave = 0;
         
+        // Ensure spawning is enabled
         isSpawning = true;
+        
+        // Stop current spawn coroutine if running
         if (spawnCoroutine != null)
             StopCoroutine(spawnCoroutine);
+        
+        // Start fresh spawn coroutine
         spawnCoroutine = StartCoroutine(SpawnRoutine());
+        
+        Debug.Log("Spawner reset for next round");
     }
     
     public int GetActiveZombieCount()

@@ -18,12 +18,12 @@ MonoBehaviour:
   poiType: 1
   requiredPlayerLevel: 1
   difficultyLevel: 8
-  baseZombieHealth: 40
+  baseZombieHealth: 50
   healthMultiplier: 1
   zombieDamage: 10
   boxesToCollect: 3
   zombieSpeed: 0.5
-  maxZombies: 30
+  maxZombies: 10
   spawnInterval: 5
   initialSpawnDelay: 0
   zombieAmount: 40

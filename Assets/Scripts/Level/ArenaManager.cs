@@ -67,6 +67,12 @@ public class ArenaManager : MonoBehaviour
         currentRound = round;
         isRoundBreak = false;
         
+        // Reset spawner for new round
+        if (zombieSpawner != null)
+        {
+            zombieSpawner.ResetSpawner();
+        }
+        
         // Calculate round stats
         currentRoundZombiesToKill = Mathf.RoundToInt(startingZombies * Mathf.Pow(zombieCountMultiplier, currentRound - 1));
         currentSpawnInterval = Mathf.Max(0.3f, startingSpawnInterval - (spawnIntervalDecrease * (currentRound - 1)));
@@ -129,7 +135,6 @@ public class ArenaManager : MonoBehaviour
     void CompleteRound()
     {
         zombieSpawner.StopSpawning();
-        
         // Calculate rewards for this round
         int moneyReward = Mathf.RoundToInt(baseMoneyReward * Mathf.Pow(moneyMultiplierPerRound, currentRound - 1));
         int xpReward = Mathf.RoundToInt(baseXPReward * Mathf.Pow(xpMultiplierPerRound, currentRound - 1));
@@ -151,41 +156,84 @@ public class ArenaManager : MonoBehaviour
             StartCoroutine(RoundBreak());
         }
     }
-    
+    void KillAllRemainingZombies()
+    {
+        GameObject[] zombies = GameObject.FindGameObjectsWithTag("Enemy");
+        int killCount = 0;
+        
+        foreach (GameObject zombie in zombies)
+        {
+            if (zombie != null)
+            {
+                ZombieHealth zombieHealth = zombie.GetComponent<ZombieHealth>();
+                if (zombieHealth != null && !zombieHealth.IsDead())
+                {
+                    // Force death without counting as kill
+                    zombieHealth.ForceDeath();
+                    killCount++;
+                }
+            }
+        }
+        
+        Debug.Log($"Killed {killCount} remaining zombies at end of round {currentRound}");
+    }
     IEnumerator RoundBreak()
     {
         isRoundBreak = true;
+        
+        // Only stop spawning - DON'T reset or kill zombies here
         if (zombieSpawner != null)
-        zombieSpawner.StopSpawning();
-
+        {
+            zombieSpawner.StopSpawning();
+        }
+        
+        // Kill remaining zombies with death animation
+        KillAllRemainingZombies();
+        
+        // Calculate rewards for this round
+        int moneyReward = Mathf.RoundToInt(baseMoneyReward * Mathf.Pow(moneyMultiplierPerRound, currentRound - 1));
+        int xpReward = Mathf.RoundToInt(baseXPReward * Mathf.Pow(xpMultiplierPerRound, currentRound - 1));
+        int nextRound = currentRound + 1;
+        
+        // UI display code...
         if (roundBreakPanel != null)
         {
             roundBreakPanel.SetActive(true);
             if (roundBreakText != null)
             {
-                int nextRound = currentRound + 1;
-                int nextZombies = Mathf.RoundToInt(startingZombies * Mathf.Pow(zombieCountMultiplier, nextRound - 1));
-                float nextInterval = Mathf.Max(0.3f, startingSpawnInterval - (spawnIntervalDecrease * (nextRound - 1)));
-                int nextHealth = startingZombieHealth + (zombieHealthIncrease * (nextRound - 1));
-                
                 roundBreakText.text = $"ROUND {currentRound} COMPLETE!\n\n" +
-                                     $"Next Round: {nextRound}\n" +
-                                     $"Zombies: {nextZombies}\n" +
-                                     $"Zombie Health: {nextHealth}\n" +
-                                     $"Next round in {roundBreakDuration} seconds...";
+                                    $"+${moneyReward} MONEY\n" +
+                                    $"+{xpReward} XP\n\n" +
+                                    $"Next Round: {nextRound}";
             }
         }
         
+        // Wait 5 seconds to show rewards
+        float rewardDisplayTime = 5f;
         float timer = 0f;
-        while (timer < roundBreakDuration)
+        while (timer < rewardDisplayTime)
         {
             timer += Time.deltaTime;
+            yield return null;
+        }
+        
+        // Now show countdown for round break duration
+        float countdownTimer = roundBreakDuration;
+        while (countdownTimer > 0)
+        {
+            if (roundBreakText != null)
+            {
+                roundBreakText.text = $"ROUND {nextRound} STARTING IN:\n\n" +
+                                    $"{Mathf.CeilToInt(countdownTimer)}";
+            }
+            countdownTimer -= Time.deltaTime;
             yield return null;
         }
         
         if (roundBreakPanel != null)
             roundBreakPanel.SetActive(false);
         
+        // Start next round - this will reconfigure the spawner
         StartRound(currentRound + 1);
     }
     

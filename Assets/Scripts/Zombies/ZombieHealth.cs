@@ -5,7 +5,16 @@ public class ZombieHealth : MonoBehaviour
     public int health = 50;
     private GameObject radarDot;
     public AudioSource audioSource;
-    public AudioClip hitSound;
+    // Add these variables with your other header variables
+    [Header("Idle Sounds")]
+    public AudioClip[] idleSounds;
+    [Range(0f, 30f)]
+    public float minIdleSoundDelay = 5f;
+    [Range(0f, 30f)]
+    public float maxIdleSoundDelay = 15f;
+    private float nextIdleSoundTime = 0f;
+
+
     public Animator animator;
     public GameObject bloodFX;
     
@@ -19,13 +28,37 @@ public class ZombieHealth : MonoBehaviour
     [Header("Money Drop Settings")]
     public GameObject moneyDropPrefab;
     [Range(0f, 100f)]
-    public float moneyDropChance = 80f; // 80% chance to drop money
+    public float moneyDropChance = 80f;
     public int minMoneyDrop = 10;
     public int maxMoneyDrop = 50;
-    public AnimationCurve moneyAmountCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f); // For weighted drops
+    public AnimationCurve moneyAmountCurve = AnimationCurve.Linear(0f, 0f, 1f, 1f);
     
     private bool isDead = false;
 
+    // Add this method to Start() or create a Start() method if you don't have one
+    void Start()
+    {
+        // Set random time for first idle sound
+        nextIdleSoundTime = Time.time + Random.Range(minIdleSoundDelay, maxIdleSoundDelay);
+    }
+
+    // Add this to Update() - create Update() method if you don't have one
+    void Update()
+    {
+        // Play random idle sounds when not dead
+        if (!isDead && audioSource != null && idleSounds.Length > 0)
+        {
+            if (Time.time >= nextIdleSoundTime)
+            {
+                // Pick random sound from array
+                AudioClip randomSound = idleSounds[Random.Range(0, idleSounds.Length)];
+                audioSource.PlayOneShot(randomSound);
+                
+                // Set next random time
+                nextIdleSoundTime = Time.time + Random.Range(minIdleSoundDelay, maxIdleSoundDelay);
+            }
+        }
+    }
     public void TakeDamage(int damage)
     {
         if (isDead) return;
@@ -44,9 +77,6 @@ public class ZombieHealth : MonoBehaviour
         if(animator)
             animator.SetTrigger("Hit");
 
-        if(audioSource && hitSound)
-            audioSource.PlayOneShot(hitSound);
-
         if(bloodFX)
         {
             GameObject blood = Instantiate(bloodFX, transform.position, Quaternion.identity);
@@ -64,13 +94,17 @@ public class ZombieHealth : MonoBehaviour
         if (isDead) return;
         isDead = true;
 
+        // Disable collider so player can pass through
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+            col.enabled = false;
+
         if (radarDot != null)
             Destroy(radarDot);
         
         if(animator)
             animator.SetTrigger("Die");
 
-        // Drop ONLY ONE item (either ammo OR money, not both)
         DropRandomItem();
 
         UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
@@ -90,15 +124,43 @@ public class ZombieHealth : MonoBehaviour
         Destroy(gameObject, 10f);
     }
 
+    public void ForceDeath()
+    {
+        if (isDead) return;
+        isDead = true;
+
+        // Disable collider so player can pass through
+        Collider col = GetComponent<Collider>();
+        if (col != null)
+            col.enabled = false;
+
+        if (radarDot != null)
+            Destroy(radarDot);
+        
+        if (animator != null)
+            animator.SetTrigger("Die");
+        
+        // Disable components but DON'T drop items or register kill
+        UnityEngine.AI.NavMeshAgent agent = GetComponent<UnityEngine.AI.NavMeshAgent>();
+        if (agent != null) agent.enabled = false;
+        
+        MonoBehaviour[] scripts = GetComponents<MonoBehaviour>();
+        foreach (MonoBehaviour script in scripts)
+        {
+            if (script != this)
+                script.enabled = false;
+        }
+        
+        // Destroy after animation (no item drop)
+        Destroy(gameObject, 10f);
+    }
     void DropRandomItem()
     {
-        // First decide if anything drops at all (70% chance total)
         float totalDropChance = 70f;
         float randomChance = Random.Range(0f, 100f);
         
         if (randomChance > totalDropChance) return;
         
-        // Now decide WHAT to drop (50% ammo, 50% money)
         bool dropAmmo = Random.value < 0.5f;
         
         if (dropAmmo)
@@ -110,6 +172,7 @@ public class ZombieHealth : MonoBehaviour
             DropMoney();
         }
     }
+    
     void DropAmmo()
     {
         float randomChance = Random.Range(0f, 100f);
@@ -121,10 +184,9 @@ public class ZombieHealth : MonoBehaviour
             return;
         }
         
-        int ammoAmount = Random.Range(minAmmoDrop, maxAmmoDrop + 1);
+        // REMOVED: ammoAmount variable (not needed anymore)
         AmmoType ammoType = GetRandomAmmoType();
         
-        // Spawn ammo slightly above ground
         Vector3 dropPosition = transform.position + Vector3.up * 0.5f;
         GameObject ammoObj = Instantiate(ammoDropPrefab, dropPosition, Quaternion.identity);
         AmmoPickup ammoPickup = ammoObj.GetComponent<AmmoPickup>();
@@ -132,8 +194,8 @@ public class ZombieHealth : MonoBehaviour
         if (ammoPickup != null)
         {
             ammoPickup.ammoType = ammoType;
-            ammoPickup.ammoAmount = ammoAmount;
-            Debug.Log($"Zombie dropped {ammoAmount} {ammoType} ammo");
+            // REMOVED: ammoPickup.ammoAmount = ammoAmount;  <- THIS WAS THE ERROR
+            Debug.Log($"Zombie dropped {ammoType} ammo");
         }
     }
     
@@ -148,15 +210,12 @@ public class ZombieHealth : MonoBehaviour
             return;
         }
         
-        // Use curve for weighted random (higher amounts are rarer)
         float curveValue = Random.value;
         float weightedAmount = moneyAmountCurve.Evaluate(curveValue);
         int moneyAmount = Mathf.RoundToInt(Mathf.Lerp(minMoneyDrop, maxMoneyDrop, weightedAmount));
         
-        // Ensure minimum of 1
         moneyAmount = Mathf.Max(1, moneyAmount);
         
-        // Spawn money slightly above ground
         Vector3 dropPosition = transform.position + Vector3.up * 0.5f;
         GameObject moneyObj = Instantiate(moneyDropPrefab, dropPosition, Quaternion.identity);
         MoneyPickup moneyPickup = moneyObj.GetComponent<MoneyPickup>();
