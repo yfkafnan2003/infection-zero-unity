@@ -45,17 +45,4 @@ Fight against waves of infected, complete missions, and upgrade your weapons to 
 ## 📱 Download
 
 👉 Play the game on itch.io:  
-[https://your-itch-link-here](https://afnan2003.itch.io/infection-zero)
-
----
-
-## 🚧 Development Status
-
-This project is currently in development.  
-More features, enemies, maps, and improvements are coming soon.
-
----
-
-## ⭐ Support
-
-If you like the project, consider giving it a ⭐ on GitHub!
+[Download](https://afnan2003.itch.io/infection-zero)
