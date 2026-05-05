@@ -1,4 +1,4 @@
-# 🧟 Infection Zero
+#  Infection Zero
 
 ![Cover](./Images/cover.png)
 
@@ -9,20 +9,20 @@ Fight against waves of infected, complete missions, and upgrade your weapons to 
 
 ---
 
-## 🎮 Gameplay
+##  Gameplay
 
 - First-person zombie shooting combat  
 - Multiple mission types:
-  - 🕒 Survive (Countdown)
-  - 💀 Kill Zombies  
-  - 📦 (More coming soon)
+  -  Survive (Countdown)
+  -  Kill Zombies  
+  -  (More coming soon)
 - Weapon system with upgrades  
 - Stamina, health, and progression system  
 - Mobile-friendly controls  
 
 ---
 
-## 🖼️ Screenshots
+##  Screenshots
 
 ### Gameplay
 ![Gameplay](./Images/gameplay1.png)
@@ -42,7 +42,6 @@ Fight against waves of infected, complete missions, and upgrade your weapons to 
 
 ---
 
-## 📱 Download
-
-👉 Play the game on itch.io:  
+##  Download
+Play the game on itch.io:  
 [Download](https://afnan2003.itch.io/infection-zero)
