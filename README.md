@@ -22,16 +22,6 @@ Fight against waves of infected, complete missions, and upgrade your weapons to 
 
 ---
 
-## 🔫 Weapons
-
-- Pistol (Glock)
-- Shotgun  
-- Machine Gun  
-
-Each weapon can be upgraded to deal more damage.
-
----
-
 ## 🖼️ Screenshots
 
 ### Gameplay
@@ -39,7 +29,8 @@ Each weapon can be upgraded to deal more damage.
 
 ![Gameplay](./Images/gameplay2.png)
 
-### Menu UI
+![Gameplay](./Images/gameplay3.png)
+
 ![Menu](./Images/menu.png)
 
 ---
@@ -54,7 +45,7 @@ Each weapon can be upgraded to deal more damage.
 ## 📱 Download
 
 👉 Play the game on itch.io:  
-https://your-itch-link-here
+[https://your-itch-link-here](https://afnan2003.itch.io/infection-zero)
 
 ---
 
@@ -62,20 +53,6 @@ https://your-itch-link-here
 
 This project is currently in development.  
 More features, enemies, maps, and improvements are coming soon.
-
----
-
-## 👨‍💻 Developer
-
-Solo developer from Bangladesh 🇧🇩  
-Follow the journey and progress on social media.
-
----
-
-## 💬 Feedback
-
-Feel free to open an issue or share feedback.  
-Your suggestions help improve the game!
 
 ---
 
