@@ -1,15 +1,47 @@
-# Infection Zero
+#  Infection Zero
 
-A 3D zombie survival shooter made in Unity.
+![Cover](./Images/cover.png)
 
-Features:
-- Zombie AI
-- Weapon system
-- Survival waves
-- Post-apocalyptic environment
+**Survive the outbreak. Erase the infection.**
 
-Tools:
-- Unity
-- Blender
+Infection Zero is a fast-paced **FPS zombie survival game** built with Unity for Android.  
+Fight against waves of infected, complete missions, and upgrade your weapons to stay alive.
 
-Developer: Afnan Alam
+---
+
+##  Gameplay
+
+- First-person zombie shooting combat  
+- Multiple mission types:
+  -  Survive (Countdown)
+  -  Kill Zombies  
+  -  (More coming soon)
+- Weapon system with upgrades  
+- Stamina, health, and progression system  
+- Mobile-friendly controls  
+
+---
+
+##  Screenshots
+
+### Gameplay
+![Gameplay](./Images/gameplay1.png)
+
+![Gameplay](./Images/gameplay2.png)
+
+![Gameplay](./Images/gameplay3.png)
+
+![Menu](./Images/menu.png)
+
+---
+
+## ⚙️ Built With
+
+- Unity (C#)
+- Blender (for models & renders)
+
+---
+
+##  Download
+Play the game on itch.io:  
+[Download](https://afnan2003.itch.io/infection-zero)
