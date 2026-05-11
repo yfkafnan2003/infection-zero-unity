@@ -199,6 +199,13 @@ public class EquipManager : MonoBehaviour
             utilityButton.onClick.AddListener(() => OnUtilitySlotClick());
         }
     }
+    public void RefreshEquippedGuns()
+    {
+        LoadEquippedGuns();
+        ValidateEquippedGuns();
+        UpdateEquipUI();
+        RefreshOwnedGunsList();
+    }
     public void OnUtilitySlotClick()
     {
         if (shopManager == null) return;

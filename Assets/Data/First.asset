@@ -29,7 +29,7 @@ MonoBehaviour:
   zombieAmount: 5
   zombiesToSpawn: 10
   surviveTime: 30
-  baseMoneyReward: 500
+  baseMoneyReward: 50
   baseXPReward: 0
   protectTime: 60
   doorHealth: 100

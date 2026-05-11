@@ -32,10 +32,22 @@ public class WeaponInventory : MonoBehaviour
             Destroy(gameObject);
         }
     }
-    
+
     void Start()
     {
         LoadInventory();
+        Debug.Log("WeaponInventory loaded - Owned guns: " + GetOwnedGunsList());
+    }
+
+    string GetOwnedGunsList()
+    {
+        string owned = "";
+        foreach (GunData gun in allGuns)
+        {
+            if (gun.isOwned)
+                owned += gun.gunName + ", ";
+        }
+        return owned;
     }
     
     public void LoadInventory()

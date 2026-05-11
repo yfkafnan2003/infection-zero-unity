@@ -67,6 +67,7 @@ MonoBehaviour:
   reloadTime: 4
   audioSource: {fileID: 630047643886210163}
   shootSound: {fileID: 8300000, guid: 24a013708e14d4f408a3fbc7a65ebdc2, type: 3}
+  dryFireSound: {fileID: 8300000, guid: 8f4c7b4a805946747adaa8decea44b69, type: 3}
   reloadSound: {fileID: 8300000, guid: 56244b479619ab543af2b6054d61476e, type: 3}
   crosshair: {fileID: 0}
 --- !u!1 &8181649372353959672

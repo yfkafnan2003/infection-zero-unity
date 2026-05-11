@@ -136,6 +136,24 @@ public class MapManager : MonoBehaviour
             return;
         }
 
+        // CHECK ENERGY FIRST BEFORE USING IT
+        if(GameManager.instance.currentEnergy <= 0)
+        {
+            Debug.Log("No energy! Showing ad panel...");
+            
+            // Show energy ad panel
+            if (EnergyAdManager.Instance != null)
+            {
+                EnergyAdManager.Instance.ShowConfirmationPanelForEnergy();
+            }
+            else
+            {
+                Debug.LogWarning("EnergyAdManager not found! Cannot show ad panel.");
+            }
+            return; // Don't proceed with starting the level
+        }
+
+        // Has energy, proceed normally
         if(GameManager.instance.UseEnergy())
         {
             GameManager.instance.CurrentPOI = currentPOI;

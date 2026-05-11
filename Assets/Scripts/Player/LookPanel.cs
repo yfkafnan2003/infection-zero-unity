@@ -24,7 +24,7 @@ public class LookPanel : MonoBehaviour, IDragHandler, IPointerDownHandler
         // Get sensitivity from settings
         if (SettingsManager.Instance != null)
         {
-            sensitivityMultiplier = SettingsManager.Instance.GetNormalSensitivity() * 10f;
+            sensitivityMultiplier = SettingsManager.Instance.GetNormalSensitivity();
         }
     }
 

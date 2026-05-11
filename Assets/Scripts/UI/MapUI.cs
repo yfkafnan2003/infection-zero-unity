@@ -11,7 +11,21 @@ public class MapUI : MonoBehaviour
 
     public Slider xpSlider;
     public TextMeshProUGUI xpText;
+    public Button energyAdButton;
 
+    void Start()
+    {
+        if (energyAdButton != null)
+            energyAdButton.onClick.AddListener(OnEnergyAdButtonClicked);
+    }
+
+    void OnEnergyAdButtonClicked()
+    {
+        if (EnergyAdManager.Instance != null)
+        {
+            EnergyAdManager.Instance.ShowConfirmationPanel();
+        }
+    }
     void Update()
     {
         GameManager gm = GameManager.instance;

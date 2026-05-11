@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2caca24532f458745946042658ee7518, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Gun
+  hitResetTime: 1
   gunName: Glocky
   gunType: 0
   ammoType: 0
@@ -66,6 +67,7 @@ MonoBehaviour:
   reloadTime: 3
   audioSource: {fileID: 6085842594249528456}
   shootSound: {fileID: 8300000, guid: 18486b9ca543ae24c86ecdebca538d38, type: 3}
+  dryFireSound: {fileID: 8300000, guid: 8f4c7b4a805946747adaa8decea44b69, type: 3}
   reloadSound: {fileID: 8300000, guid: bee02268ff49d1a46ba5a0083e2b7cdc, type: 3}
   crosshair: {fileID: 0}
 --- !u!1 &8006080654793727674

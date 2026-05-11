@@ -23,6 +23,7 @@ public class ShopManager : MonoBehaviour
 {
     [Header("Shop UI")]
     public GameObject shopPanel;
+    public WeaponInventory weaponInventory;
     public Button leftArrowButton;
     public Button rightArrowButton;
     public Button buyUpgradeButton;
@@ -87,7 +88,25 @@ public class ShopManager : MonoBehaviour
     
     void Start()
     {
+        // Force load fresh data from PlayerPrefs
         LoadOwnedGuns();
+        
+        // Also load from WeaponInventory if available
+        if (weaponInventory != null)
+        {
+            weaponInventory.LoadInventory();
+            // Sync ShopManager guns with WeaponInventory
+            foreach (GunData gun in allGuns)
+            {
+                GunData inventoryGun = weaponInventory.GetGunData(gun.gunName);
+                if (inventoryGun != null)
+                {
+                    gun.isOwned = inventoryGun.isOwned;
+                    gun.currentUpgradeLevel = inventoryGun.currentUpgradeLevel;
+                }
+            }
+        }
+        
         SetupShopUI();
         SetupUtilityUI();
         SetupResetButtons();
@@ -337,12 +356,14 @@ public class ShopManager : MonoBehaviour
         foreach (GunData gun in allGuns)
         {
             string key = gun.gunName + "_Owned";
-            gun.isOwned = PlayerPrefs.GetInt(key, gun.gunName == "Glocky" ? 1 : 0) == 1;
+            int defaultValue = gun.gunName == "Glocky" ? 1 : 0;
+            int savedValue = PlayerPrefs.GetInt(key, defaultValue);
+            gun.isOwned = savedValue == 1;
+            
+            Debug.Log($"Loading {gun.gunName}: isOwned={gun.isOwned} (saved value: {savedValue})");
             
             string upgradeKey = gun.gunName + "_Upgrade";
             gun.currentUpgradeLevel = PlayerPrefs.GetInt(upgradeKey, 0);
-            
-            PlayerPrefs.SetInt(gun.gunName + "_BaseDamage", gun.baseDamage);
         }
         
         PlayerPrefs.Save();
@@ -359,6 +380,12 @@ public class ShopManager : MonoBehaviour
             PlayerPrefs.SetInt(upgradeKey, gun.currentUpgradeLevel);
         }
         PlayerPrefs.Save();
+        
+        // Sync with WeaponInventory
+        if (weaponInventory != null)
+        {
+            weaponInventory.LoadInventory();
+        }
     }
     
     void PreviousGun()
@@ -582,13 +609,27 @@ public class ShopManager : MonoBehaviour
             {
                 GameManager.instance.AddMoney(-currentDisplayedGun.price);
                 currentDisplayedGun.isOwned = true;
-                SaveOwnedGuns();
+                
+                // Save to PlayerPrefs immediately
+                PlayerPrefs.SetInt(currentDisplayedGun.gunName + "_Owned", 1);
+                PlayerPrefs.Save();
+                
+                SaveOwnedGuns(); // This saves all guns
+                
+                // Also update WeaponInventory
+                if (weaponInventory != null)
+                {
+                    weaponInventory.LoadInventory(); // Reload to sync
+                }
                 
                 PlayerPrefs.SetInt(currentDisplayedGun.gunName + "_BaseDamage", currentDisplayedGun.baseDamage);
                 
+                // AUTO-EQUIP THE NEW GUN
+                AutoEquipGun(currentDisplayedGun);
+                
                 DisplayGun(currentGunIndex);
                 UpdatePlayerMoneyDisplay();
-                Debug.Log($"Bought {currentDisplayedGun.gunName}");
+                Debug.Log($"Bought {currentDisplayedGun.gunName} - Saved to PlayerPrefs");
             }
             else
             {
@@ -596,7 +637,54 @@ public class ShopManager : MonoBehaviour
             }
         }
     }
-    
+    void AutoEquipGun(GunData gun)
+    {
+        // Find the correct slot for this gun type
+        int targetSlot = -1;
+        switch (gun.gunType)
+        {
+            case GunType.Pistol: targetSlot = 0; break;
+            case GunType.Shotgun: targetSlot = 1; break;
+            case GunType.Machinegun: targetSlot = 2; break;
+        }
+        
+        if (targetSlot == -1) return;
+        
+        // Get EquipManager
+        EquipManager equipManager = FindObjectOfType<EquipManager>();
+        if (equipManager == null) return;
+        
+        // Get currently equipped guns
+        string[] equippedGuns = equipManager.GetEquippedGunNames();
+        
+        // Check if target slot already has a weapon (swap)
+        if (!string.IsNullOrEmpty(equippedGuns[targetSlot]))
+        {
+            string swappedGun = equippedGuns[targetSlot];
+            equippedGuns[targetSlot] = gun.gunName;
+            Debug.Log($"Swapped {gun.gunName} with {swappedGun}");
+        }
+        else
+        {
+            // Empty slot, just equip
+            equippedGuns[targetSlot] = gun.gunName;
+            Debug.Log($"{gun.gunName} equipped to slot {targetSlot + 1}");
+        }
+        
+        // Save equipped guns
+        for (int i = 0; i < 3; i++)
+        {
+            PlayerPrefs.SetString($"EquippedGun_{i}", equippedGuns[i]);
+        }
+        PlayerPrefs.Save();
+        
+        // Update WeaponInventory
+        if (weaponInventory != null)
+        {
+            weaponInventory.equippedGunNames = equippedGuns;
+            weaponInventory.SaveInventory();
+        }
+    }
     void UpdatePlayerMoneyDisplay()
     {
         if (playerMoneyText != null && GameManager.instance != null)

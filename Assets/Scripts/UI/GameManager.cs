@@ -89,7 +89,12 @@ public class GameManager : MonoBehaviour
             realTimeRegenTimer = 0f;
         }
     }
-
+    public void AddEnergy(int amount)
+    {
+        currentEnergy = Mathf.Min(currentEnergy + amount, maxEnergy);
+        SaveAllData();
+        Debug.Log($"Added {amount} energy! Current energy: {currentEnergy}/{maxEnergy}");
+    }
     void UpdateEnergyOffline()
     {
         float lastUpdate = PlayerPrefs.GetFloat(lastEnergyUpdateKey, (float)GetCurrentTimestamp());
@@ -111,7 +116,14 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetFloat(lastEnergyUpdateKey, currentTime);
         PlayerPrefs.Save();
     }
-
+    public void SyncAllGunData(List<GunData> allGuns)
+    {
+        foreach (GunData gun in allGuns)
+        {
+            gun.isOwned = PlayerPrefs.GetInt(gun.gunName + "_Owned", gun.gunName == "Glocky" ? 1 : 0) == 1;
+            gun.currentUpgradeLevel = PlayerPrefs.GetInt(gun.gunName + "_Upgrade", 0);
+        }
+    }
     public float GetEnergyRegenTimeRemaining()
     {
         if (currentEnergy >= maxEnergy)

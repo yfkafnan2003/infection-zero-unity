@@ -65,6 +65,7 @@ public class Gun : MonoBehaviour
     [Header("Audio")]
     public AudioSource audioSource;
     public AudioClip shootSound;
+    public AudioClip dryFireSound;
     public AudioClip reloadSound;
 
     public DynamicCrosshair crosshair;
@@ -88,7 +89,21 @@ public class Gun : MonoBehaviour
     {
         if(isReloading) return;
         if(Time.time < nextFireTime) return;
-        if(currentAmmo <= 0) return;
+        
+        // Handle no ammo
+        if(currentAmmo <= 0)
+        {
+            // Show "No Ammo" warning
+            if (HitTextManager.Instance != null)
+            {
+                HitTextManager.Instance.ShowNoAmmoText();
+            }
+            
+            if (audioSource != null && dryFireSound != null)
+                audioSource.PlayOneShot(dryFireSound);
+            
+            return;
+        }
 
         nextFireTime = Time.time + fireRate;
 
@@ -325,7 +340,21 @@ public class Gun : MonoBehaviour
     public void StartShooting()
     {
         if (isReloading) return;
-        if (currentAmmo <= 0) return;
+        
+        // Handle no ammo BEFORE the coroutine
+        if (currentAmmo <= 0)
+        {
+            // Show "No Ammo" warning
+            if (HitTextManager.Instance != null)
+            {
+                HitTextManager.Instance.ShowNoAmmoText();
+            }
+            
+            if (audioSource != null && dryFireSound != null)
+                audioSource.PlayOneShot(dryFireSound);
+            
+            return;  // Don't start shooting
+        }
         
         if (!isShooting)
         {

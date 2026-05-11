@@ -73,7 +73,55 @@ public class HitTextManager : MonoBehaviour
         
         StartCoroutine(AnimateHitText(hitTextObj));
     }
-    
+    public void ShowNoAmmoText()
+    {
+        if (hitTextPrefab == null || canvasTransform == null) return;
+        
+        // Get screen center position
+        Vector3 screenPos = new Vector3(Screen.width / 2, Screen.height / 2, 0);
+        GameObject hitTextObj = Instantiate(hitTextPrefab, canvasTransform);
+        hitTextObj.transform.position = screenPos;
+        
+        TextMeshProUGUI textComponent = hitTextObj.GetComponent<TextMeshProUGUI>();
+        
+        if (textComponent != null)
+        {
+            textComponent.text = "OUT OF AMMO!";
+            textComponent.color = Color.red;
+            textComponent.fontSize = 24;
+            textComponent.fontStyle = FontStyles.Bold;
+        }
+        
+        StartCoroutine(AnimateNoAmmoText(hitTextObj));
+    }
+
+    IEnumerator AnimateNoAmmoText(GameObject hitTextObj)
+    {
+        TextMeshProUGUI text = hitTextObj.GetComponent<TextMeshProUGUI>();
+        RectTransform rect = hitTextObj.GetComponent<RectTransform>();
+        
+        float elapsedTime = 0f;
+        Vector3 startPos = rect.position;
+        Color startColor = text.color;
+        
+        while (elapsedTime < lifetime)
+        {
+            elapsedTime += Time.deltaTime;
+            
+            float progress = elapsedTime / lifetime;
+            rect.position = startPos + Vector3.up * (progress * floatSpeed * 50);
+            
+            if (progress > 0.5f)
+            {
+                float fadeProgress = (progress - 0.5f) / 0.5f;
+                text.color = new Color(startColor.r, startColor.g, startColor.b, 1 - fadeProgress);
+            }
+            
+            yield return null;
+        }
+        
+        Destroy(hitTextObj);
+    }
     // ADD THIS METHOD - For weakpoint hits
     public void ShowWeakpointHitText(Vector3 worldPosition, int damage)
     {

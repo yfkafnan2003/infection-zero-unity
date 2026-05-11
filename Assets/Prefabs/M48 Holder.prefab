@@ -1211,6 +1211,10 @@ PrefabInstance:
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 1430445067404769378, guid: cb45267b740e9874d8adbab2d18360c2, type: 3}
+      propertyPath: dryFireSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 8f4c7b4a805946747adaa8decea44b69, type: 3}
+    - target: {fileID: 1430445067404769378, guid: cb45267b740e9874d8adbab2d18360c2, type: 3}
       propertyPath: magazineSize
       value: 60
       objectReference: {fileID: 0}

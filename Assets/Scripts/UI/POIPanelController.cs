@@ -148,6 +148,7 @@ public class POIPanelController : MonoBehaviour
             return;
         }
         
+        // Let MapManager handle energy check
         if (MapManager.Instance != null)
         {
             MapManager.Instance.StartLevel();

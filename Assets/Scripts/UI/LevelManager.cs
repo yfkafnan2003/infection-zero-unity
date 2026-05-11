@@ -3,6 +3,8 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using System;
+using GoogleMobileAds.Api;
 
 public class LevelManager : MonoBehaviour
 {
@@ -11,7 +13,14 @@ public class LevelManager : MonoBehaviour
     public TextMeshProUGUI missionObjectiveText;
     public TextMeshProUGUI missionProgressText;
     public Image missionIcon;
-    
+    private RewardedAd doubleRewardAd;
+    private string doubleRewardAdUnitId = "ca-app-pub-3535982579807808/4825436948"; 
+    [Header("Double Reward")]
+    public Button doubleMoneyButton;
+    private bool isDoubleReward = false;
+    private int originalMoneyReward;
+    private int originalXPReward;
+
     [Header("Mission Icons")]
     public Sprite killZombiesIcon;
     public Sprite countdownIcon;
@@ -64,7 +73,6 @@ public class LevelManager : MonoBehaviour
         {
             completionPanelCanvasGroup.alpha = 0f;
         }
-        
         // Debug: Check if GameManager exists
         if (GameManager.instance == null)
         {
@@ -73,6 +81,11 @@ public class LevelManager : MonoBehaviour
             missionObjectiveText.text = "GameManager not found!";
             return;
         }
+            
+        MobileAds.Initialize(initStatus => {
+            Debug.Log("AdMob initialized");
+            LoadDoubleRewardAd();
+        });
         if (GameManager.instance != null && GameManager.instance.CurrentPOI != null)
         {
             currentPOIData = GameManager.instance.CurrentPOI;
@@ -152,6 +165,10 @@ public class LevelManager : MonoBehaviour
         if (deathPanel != null)
             deathPanel.SetActive(false);
     }
+
+
+
+
     public bool IsMissionComplete()
     {
         return missionCompleted || missionFailed;
@@ -188,6 +205,9 @@ public class LevelManager : MonoBehaviour
                 break;
         }
     }
+
+
+
     void SetupArenaMission()
     {
         if (missionTitleText != null)
@@ -470,7 +490,7 @@ public class LevelManager : MonoBehaviour
             if (spawner != null)
                 spawner.StopSpawning();
             
-            // Freeze remaining zombies (they won't attack)
+            // Freeze remaining zombies
             GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
             foreach (GameObject enemy in enemies)
             {
@@ -490,22 +510,22 @@ public class LevelManager : MonoBehaviour
                 audioSource.PlayOneShot(winsound);
             }
             
-            int moneyReward = CalculateReward();
-            int xpReward = CalculateXP();
+            // Calculate rewards
+            originalMoneyReward = CalculateReward();
+            originalXPReward = CalculateXP();
             
-            if (GameManager.instance != null)
-            {
-                GameManager.instance.AddMoney(moneyReward);
-                GameManager.instance.AddXP(xpReward);
-            }
+            // Setup double money button
+            SetupDoubleMoneyButton();
             
+            // Show completion panel first (without adding rewards yet)
             if (completionText != null)
             {
-                completionText.text = $"MISSION COMPLETE!\n\nRewards:\n${moneyReward}\n{xpReward} XP";
+                completionText.text = $"MISSION COMPLETE!\n\nRewards:\n${originalMoneyReward}\n{originalXPReward} XP\n\nWatch ad to DOUBLE your rewards!";
             }
-                // Apply slow motion and fade in effect
-                SlowMotionAndFadeIn();
-            }
+            
+            // Apply slow motion and fade in effect
+            SlowMotionAndFadeIn();
+        }
         else
         {
             // Player died
@@ -633,8 +653,22 @@ public class LevelManager : MonoBehaviour
 
     void OnContinueButtonClicked()
     {
-        Time.timeScale = 1f; // Reset time scale before loading
+        Time.timeScale = 1f;
         UnfreezeGame();
+        
+        // Add rewards when continuing (in case player didn't watch ad)
+        if (!isDoubleReward)
+        {
+            if (GameManager.instance != null)
+            {
+                GameManager.instance.AddMoney(originalMoneyReward);
+                GameManager.instance.AddXP(originalXPReward);
+            }
+        }
+        else
+        {
+            // Already added in ad completion, just proceed
+        }
         
         if (GameManager.instance != null && GameManager.instance.CurrentPOI != null)
         {
@@ -653,7 +687,7 @@ public class LevelManager : MonoBehaviour
             }
         }
         
-        // Use loading screen (REMOVED the duplicate SceneManager.LoadScene)
+        // Use loading screen
         if (LoadingScreen.Instance != null)
         {
             LoadingScreen.Instance.LoadScene("MapScene");
@@ -663,7 +697,6 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene("MapScene");
         }
     }
-
     int CalculateReward()
     {
         if (GameManager.instance == null || GameManager.instance.CurrentPOI == null)
@@ -680,5 +713,95 @@ public class LevelManager : MonoBehaviour
             
         POIData poi = GameManager.instance.CurrentPOI;
         return poi.GetXPReward();
+    }
+    void OnDoubleMoneyClicked()
+    {
+        if (doubleMoneyButton != null)
+            doubleMoneyButton.interactable = false;
+        
+        if (doubleRewardAd != null)
+        {
+            doubleRewardAd.Show((reward) =>
+            {
+                Debug.Log($"Double reward earned!");
+                isDoubleReward = true;
+                
+                int doubledMoney = originalMoneyReward * 2;
+                int doubledXP = originalXPReward * 2;
+                
+                // ADD THESE LINES - Actually give the rewards
+                if (GameManager.instance != null)
+                {
+                    GameManager.instance.AddMoney(doubledMoney);
+                    GameManager.instance.AddXP(doubledXP);
+                }
+                
+                if (completionText != null)
+                {
+                    completionText.text = $"MISSION COMPLETE!\n\nRewards:\n${doubledMoney} (DOUBLED!)\n{doubledXP} XP (DOUBLED!)";
+                }
+                
+                if (doubleMoneyButton != null)
+                    doubleMoneyButton.gameObject.SetActive(false);
+                
+                LoadDoubleRewardAd();
+            });
+        }
+        else
+        {
+            Debug.Log("Double reward ad not ready, loading...");
+            LoadDoubleRewardAd();
+            StartCoroutine(RetryDoubleReward());
+        }
+    }
+    IEnumerator RetryDoubleReward()
+    {
+        yield return new WaitForSeconds(2f);
+        OnDoubleMoneyClicked();
+    }
+    public void LoadDoubleRewardAd()
+    {
+        string adUnitId = "ca-app-pub-3535982579807808/4825436948";
+        AdRequest request = new AdRequest();
+        
+        RewardedAd.Load(adUnitId, request, (ad, error) =>
+        {
+            if (error != null)
+            {
+                Debug.LogError($"Failed to load double reward ad: {error}");
+                return;
+            }
+            doubleRewardAd = ad;
+            Debug.Log("Double reward ad ready");
+        });
+    }
+    IEnumerator ShowDoubleRewardAd()
+    {
+        Debug.Log("Showing simulated double reward ad...");
+        yield return new WaitForSecondsRealtime(2f);
+        
+        // Double the rewards
+        isDoubleReward = true;
+        
+        int doubledMoney = originalMoneyReward * 2;
+        int doubledXP = originalXPReward * 2;
+        
+        if (completionText != null)
+        {
+            completionText.text = $"MISSION COMPLETE!\n\nRewards:\n${doubledMoney} (DOUBLED!)\n{doubledXP} XP (DOUBLED!)";
+        }
+        
+        if (doubleMoneyButton != null)
+            doubleMoneyButton.gameObject.SetActive(false);
+        
+        Debug.Log("Double reward ad completed!");
+    }
+    void SetupDoubleMoneyButton()
+    {
+        if (doubleMoneyButton != null)
+        {
+            doubleMoneyButton.onClick.AddListener(OnDoubleMoneyClicked);  // ADD THIS LINE
+            doubleMoneyButton.gameObject.SetActive(true);
+        }
     }
 }

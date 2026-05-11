@@ -108,16 +108,16 @@ public class SettingsManager : MonoBehaviour
         // Setup sensitivity sliders - INCREASE THE RANGE
         if (normalSensitivitySlider != null)
         {
-            normalSensitivitySlider.minValue = 0.5f;
-            normalSensitivitySlider.maxValue = 5f;
+            normalSensitivitySlider.minValue = 0.05f;
+            normalSensitivitySlider.maxValue = 0.5f;
             normalSensitivitySlider.value = currentNormalSensitivity;
             normalSensitivitySlider.onValueChanged.AddListener(SetNormalSensitivity);
         }
-        
+
         if (aimSensitivitySlider != null)
         {
-            aimSensitivitySlider.minValue = 0.3f;
-            aimSensitivitySlider.maxValue = 3f;
+            aimSensitivitySlider.minValue = 0.05f;
+            aimSensitivitySlider.maxValue = 0.5f;
             aimSensitivitySlider.value = currentAimSensitivity;
             aimSensitivitySlider.onValueChanged.AddListener(SetAimSensitivity);
         }
@@ -142,8 +142,8 @@ public class SettingsManager : MonoBehaviour
     public void LoadSettings()
     {
         // Load sensitivity
-        currentNormalSensitivity = PlayerPrefs.GetFloat("NormalSensitivity", 1.5f);
-        currentAimSensitivity = PlayerPrefs.GetFloat("AimSensitivity", 1f);
+        currentNormalSensitivity = PlayerPrefs.GetFloat("NormalSensitivity", 0.2362331f);
+        currentAimSensitivity = PlayerPrefs.GetFloat("AimSensitivity", 0.2362331f);
         
         // Load audio (0-1 range) with safe defaults
         float masterVol = PlayerPrefs.GetFloat("MasterVolume", 0.75f);
