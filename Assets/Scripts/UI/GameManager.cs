@@ -37,9 +37,11 @@ public class GameManager : MonoBehaviour
     [Header("Energy")]
     public int maxEnergy = 5;
     public int currentEnergy = 5;
-    public float energyRegenTime = 300f; // 5 minutes in seconds
+    public float energyRegenTime = 600f;
     private string lastEnergyUpdateKey = "LastEnergyUpdate";
     private float realTimeRegenTimer = 0f; // Real-time countdown timer
+    [Header("Premium")]
+    public bool infiniteStamina = false;
         
     void Awake()
     {
@@ -144,7 +146,7 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("XPToNextLevel", xpToNextLevel);
         PlayerPrefs.SetInt("CurrentEnergy", currentEnergy);
         PlayerPrefs.SetInt("CurrentChainIndex", currentChainIndex);
-        
+        PlayerPrefs.SetInt("InfiniteStamina", infiniteStamina ? 1 : 0);
         // Save real-time timer progress
         PlayerPrefs.SetFloat("RealTimeRegenTimer", realTimeRegenTimer);
         
@@ -170,7 +172,7 @@ public class GameManager : MonoBehaviour
         xpToNextLevel = PlayerPrefs.GetInt("XPToNextLevel", 100);
         currentEnergy = PlayerPrefs.GetInt("CurrentEnergy", maxEnergy);
         currentChainIndex = PlayerPrefs.GetInt("CurrentChainIndex", 0);
-        
+        infiniteStamina = PlayerPrefs.GetInt("InfiniteStamina",0) == 1;
         // Load real-time timer
         realTimeRegenTimer = PlayerPrefs.GetFloat("RealTimeRegenTimer", 0f);
         
@@ -235,6 +237,9 @@ public class GameManager : MonoBehaviour
     
     public bool UseEnergy()
     {
+        if (infiniteStamina)
+            return true;
+
         if(currentEnergy <= 0)
             return false;
 

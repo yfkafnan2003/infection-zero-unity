@@ -27,9 +27,9 @@ public class AmmoPickup : MonoBehaviour
     private float bobTimer = 0f;
     
     // Ammo range for each weapon type
-    private Vector2 pistolRange = new Vector2(20f, 40f);
-    private Vector2 shotgunRange = new Vector2(6f, 15f);
-    private Vector2 machinegunRange = new Vector2(30f, 60f);
+    private Vector2 pistolRange = new Vector2(20f, 50f);
+    private Vector2 shotgunRange = new Vector2(3f, 10f);
+    private Vector2 machinegunRange = new Vector2(30f, 90f);
     
     void Start()
     {

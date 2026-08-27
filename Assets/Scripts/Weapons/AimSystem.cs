@@ -92,14 +92,14 @@ float bobTimer = 0f;
             playerMovement.speed = aimSpeedMovement;
 
             if(crosshair != null)
-                crosshair.ShowCrosshair(false);
+                crosshair.SetVisible(false);
         }
         else
         {
             playerMovement.speed = normalSpeed;
 
             if(crosshair != null)
-                crosshair.ShowCrosshair(true);
+                crosshair.SetVisible(true);
         }
     }
     public bool IsAiming()
@@ -113,7 +113,7 @@ float bobTimer = 0f;
         playerMovement.speed = normalSpeed;
 
         if(crosshair != null)
-            crosshair.ShowCrosshair(true);
+            crosshair.SetVisible(true);
     }
 
     public void ForceAim()
@@ -122,7 +122,7 @@ float bobTimer = 0f;
         playerMovement.speed = aimSpeedMovement;
 
         if(crosshair != null)
-            crosshair.ShowCrosshair(false);
+            crosshair.SetVisible(false);
     }
     void WeaponBob()
     {

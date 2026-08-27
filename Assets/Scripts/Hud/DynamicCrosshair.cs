@@ -20,6 +20,11 @@ public class DynamicCrosshair : MonoBehaviour
     public RectTransform left;
     public RectTransform right;
 
+    public WeaponManager weaponManager;
+    [Header("Auto Shoot")]
+    public bool autoShoot = true;
+    public float autoShootDistance = 20f;
+    private bool isAutoShooting = false;
     public float defaultDistance = 20f;
     public float moveDistance = 40f;
     public float shootDistance = 60f;
@@ -72,31 +77,57 @@ public class DynamicCrosshair : MonoBehaviour
     }
     void CheckEnemyTarget()
     {
+        Gun gun = weaponManager.GetCurrentWeapon();
+
         Ray ray = playerCamera.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
         RaycastHit hit;
-        
-        // Use single raycast instead of RaycastAll for better performance
+
         if (Physics.Raycast(ray, out hit, detectionDistance))
         {
-            // Try to get ZombieHealth from the hit collider or its parent
-            ZombieHealth enemy = hit.collider.GetComponent<ZombieHealth>();
-            
-            // If not found on the collider, try on parent
-            if (enemy == null && hit.collider.transform.parent != null)
-                enemy = hit.collider.transform.parent.GetComponent<ZombieHealth>();
-            
-            // If still not found, try on root
-            if (enemy == null)
-                enemy = hit.collider.GetComponentInParent<ZombieHealth>();
-            
-            if (enemy != null && !enemy.IsDead())
+            ZombieHealth zombie = hit.collider.GetComponentInParent<ZombieHealth>();
+            BossHealth boss = hit.collider.GetComponentInParent<BossHealth>();
+
+            bool validTarget =
+                (zombie != null && !zombie.IsDead()) ||
+                (boss != null && !boss.IsDead());
+
+            if (validTarget)
             {
                 SetCrosshairColor(enemyColor);
+
+                float distance = hit.distance;
+
+                if (autoShoot &&
+                    gun != null &&
+                    !gun.IsReloading() &&
+                    distance <= autoShootDistance)
+                {
+                    if (!isAutoShooting)
+                    {
+                        gun.StartShooting();
+                        isAutoShooting = true;
+                    }
+                }
+                else
+                {
+                    if (isAutoShooting)
+                    {
+                        gun.StopShooting();
+                        isAutoShooting = false;
+                    }
+                }
+
                 return;
             }
         }
-        
+
         SetCrosshairColor(normalColor);
+
+        if(gun != null && isAutoShooting)
+        {
+            gun.StopShooting();
+            isAutoShooting = false;
+        }
     }
     void SetCrosshairColor(Color c)
     {
@@ -116,5 +147,22 @@ public class DynamicCrosshair : MonoBehaviour
     public void ShowCrosshair(bool show)
     {
         gameObject.SetActive(show);
+    }
+    public void SetVisible(bool visible)
+    {
+        float alpha = visible ? 1f : 0f;
+
+        SetImageAlpha(crosshairDot, alpha);
+        SetImageAlpha(crosshairL, alpha);
+        SetImageAlpha(crosshairR, alpha);
+        SetImageAlpha(crosshairU, alpha);
+        SetImageAlpha(crosshairD, alpha);
+    }
+
+    void SetImageAlpha(Image img, float alpha)
+    {
+        Color c = img.color;
+        c.a = alpha;
+        img.color = c;
     }
 }

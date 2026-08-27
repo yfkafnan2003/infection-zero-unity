@@ -73,6 +73,7 @@ public class ShopManager : MonoBehaviour
     public Button utilityLeftButton;
     public Button utilityRightButton;
     public Button buyUtilityButton;
+    public Button buyUtilityButton2;
     public TextMeshProUGUI utilityNameText;
     public TextMeshProUGUI utilityPriceText;
     public TextMeshProUGUI utilityRequiredLevelText; 
@@ -235,6 +236,8 @@ public class ShopManager : MonoBehaviour
         
         if (buyUtilityButton != null)
             buyUtilityButton.onClick.AddListener(BuyUtility);
+        if (buyUtilityButton2 != null)
+            buyUtilityButton2.onClick.AddListener(BuyUtility);
         
         LoadUtilities();
         

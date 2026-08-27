@@ -14,33 +14,14 @@ public class WeaponManager : MonoBehaviour
     public Image[] weaponIcons; // 3 buttons icons
     public Color selectedColor = Color.white;
     public Color normalColor = Color.gray;
+    
     [Header("Weapon Switch Animation")]
     public float switchSpeed = 8f;
     public float downOffset = -0.6f;
 
     bool switching = false;
     public AimSystem aimSystem;
-    void Start()
-    {
 
-    }
-    void Update()
-    {
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-            if (touch.phase == TouchPhase.Began)
-            {
-                Debug.Log("Touch Began - Start Shooting");
-                ShootCurrentWeapon();
-            }
-            else if (touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled)
-            {
-                Debug.Log("Touch Ended - Stop Shooting");
-                StopShootingCurrentWeapon();
-            }
-        }
-    }
     public void InitializeWeapons()
     {
         // First, deactivate all weapons and setup references

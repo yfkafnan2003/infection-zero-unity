@@ -91,7 +91,7 @@ MonoBehaviour:
   spread: 5
   magazineSize: 8
   currentAmmo: 0
-  reserveAmmo: 30
+  reserveAmmo: 60
   gunAnimator: {fileID: 8974975088880532611}
   aimSystem: {fileID: 0}
   ammoText: {fileID: 0}

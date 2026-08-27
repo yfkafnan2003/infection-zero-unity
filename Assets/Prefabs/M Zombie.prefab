@@ -76,6 +76,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 63661b59dfa8d7d45b22401f40c73121, type: 2}
+    - target: {fileID: 8597865178428971248, guid: 197d635746145e54b842be287b2ba826, type: 3}
+      propertyPath: 'm_Materials.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 0324ca8d7c1bd664399616350a258e96, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -191,7 +195,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZombieHealth
   health: 50
   audioSource: {fileID: 1089666655375122772}
-  hitSound: {fileID: 8300000, guid: fc4b0aef8f1be7740a63c0122919f1ac, type: 3}
+  idleSounds: []
+  minIdleSoundDelay: 5
+  maxIdleSoundDelay: 15
   animator: {fileID: 3514610350392244121}
   bloodFX: {fileID: 0}
   ammoDropPrefab: {fileID: 6244663976635770586, guid: 82d56abb11213d743a66996aa39cc01e, type: 3}

@@ -21,6 +21,13 @@ public class LevelManager : MonoBehaviour
     private int originalMoneyReward;
     private int originalXPReward;
 
+    [Header("Zombie Rush")]
+    public GameObject zombieRushPanel;
+    public TMPro.TextMeshProUGUI zombieRushText;
+    public AudioClip zombieRushSound;
+
+    private bool zombieRushStarted = false;
+
     [Header("Mission Icons")]
     public Sprite killZombiesIcon;
     public Sprite countdownIcon;
@@ -51,8 +58,12 @@ public class LevelManager : MonoBehaviour
     public AudioClip deathSound;
     public AudioClip winsound;
     public float deathSceneDelay = 3f;
-    public AudioSource audioSource;
+    [Header("Background Music")]
+    public AudioSource normalMusic;
+    public AudioSource zombieRushMusic;
 
+    [Header("Sound Effects")]
+    public AudioSource audioSource;
     [Header("References")]
     public PlayerHealth playerHealth;
     public GameObject enemySpawner;
@@ -164,6 +175,17 @@ public class LevelManager : MonoBehaviour
             
         if (deathPanel != null)
             deathPanel.SetActive(false);
+
+        if (normalMusic != null)
+        {
+            normalMusic.loop = true;
+            normalMusic.Play();
+        }
+
+        if (zombieRushMusic != null)
+        {
+            zombieRushMusic.Stop();
+        }
     }
 
 
@@ -340,6 +362,48 @@ public class LevelManager : MonoBehaviour
         if (missionCompleted || missionFailed) return;
         CompleteMission(true);
     }
+    public bool enableSpawner = true;
+    public bool enableMusic = true;
+    public bool enableUI = true;
+    public bool enableSound = true;
+
+    public void StartZombieRush()
+    {
+        if (zombieRushStarted)
+            return;
+
+        zombieRushStarted = true;
+
+        ZombieSpawner spawner = FindObjectOfType<ZombieSpawner>();
+
+        if (enableSpawner && spawner != null)
+            spawner.StartZombieRush();
+
+        if (enableMusic)
+        {
+            normalMusic.Stop();
+
+            zombieRushMusic.loop = true;
+            zombieRushMusic.Play();
+        }
+
+        if (enableUI)
+            StartCoroutine(ShowZombieRushWarning());
+
+        if (enableSound)
+            audioSource.PlayOneShot(zombieRushSound);
+    }
+    IEnumerator ShowZombieRushWarning()
+    {
+        zombieRushPanel.SetActive(true);
+
+        if (zombieRushText != null)
+            zombieRushText.text = "ZOMBIES ARE COMING!";
+
+        yield return new WaitForSeconds(3f);
+
+        zombieRushPanel.SetActive(false);
+    }
     void UpdateArenaMission()
     {
         if (arenaManager != null && missionProgressText != null)
@@ -352,6 +416,14 @@ public class LevelManager : MonoBehaviour
     
     void UpdateKillZombiesMission()
     {
+        int remaining = zombiesToKill - currentZombieKills;
+
+        if (!zombieRushStarted &&
+            remaining <= Mathf.CeilToInt(zombiesToKill * 0.25f))
+        {
+            StartZombieRush();
+        }
+
         if (!missionCompleted && currentZombieKills >= zombiesToKill)
         {
             CompleteMission(true);
@@ -396,6 +468,12 @@ public class LevelManager : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             UpdateMissionProgress();
+
+            if (!zombieRushStarted &&
+                timeRemaining <= currentPOIData.surviveTime * 0.25f)
+            {
+                StartZombieRush();
+            }
             
             if (timeRemaining <= 0)
             {

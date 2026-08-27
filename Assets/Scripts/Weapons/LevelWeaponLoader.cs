@@ -123,19 +123,32 @@ public class LevelWeaponLoader : MonoBehaviour
                     gunObj.transform.localPosition = customization.position;
                     gunObj.transform.localRotation = Quaternion.Euler(customization.rotation);
                     
-                    // Set the gun name to match what was saved
-                    gun.gunName = equippedGunNames[i];
-                    
-                    // Set the gun name to match what was saved
+                    // Set the gun name
                     gun.gunName = equippedGunNames[i];
 
-                    // Get damage from PlayerPrefs (saved by ShopManager)
-                    int upgradeLevel = PlayerPrefs.GetInt(gun.gunName + "_Upgrade", 0);
-                    int baseDamage = PlayerPrefs.GetInt(gun.gunName + "_BaseDamage", 20); // Default 20 if not found
+                    int upgradeLevel = PlayerPrefs.GetInt(
+                        gun.gunName + "_Upgrade",
+                        0
+                    );
 
-                    // Calculate final damage
-                    int calculatedDamage = baseDamage + (upgradeLevel * 5);
+                    int baseDamage = PlayerPrefs.GetInt(
+                        gun.gunName + "_BaseDamage",
+                        gun.damage
+                    );
+
+                    // Every upgrade multiplies damage by 1.5
+                    int calculatedDamage = Mathf.RoundToInt(
+                        baseDamage * Mathf.Pow(1.5f, upgradeLevel)
+                    );
+
                     gun.damage = calculatedDamage;
+
+                    Debug.Log(
+                        $"Loaded {gun.gunName} | " +
+                        $"Base Damage: {baseDamage} | " +
+                        $"Upgrade: {upgradeLevel} | " +
+                        $"Final Damage: {gun.damage}"
+                    );
 
                     Debug.Log($"Loaded {gun.gunName} with damage: {calculatedDamage} (Base: {baseDamage}, Upgrade: {upgradeLevel})");
 

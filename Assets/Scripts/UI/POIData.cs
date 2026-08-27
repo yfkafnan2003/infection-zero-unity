@@ -49,6 +49,10 @@
         [Tooltip("Initial spawn delay")]
         [Range(0f, 5f)]
         public float initialSpawnDelay = 0f;
+        [Header("Zombie Rush Settings")]
+        [Tooltip("Spawn interval after Zombie Rush starts")]
+        [Range(0.1f, 10f)]
+        public float zombieRushSpawnInterval = 1f;
         
         [Header("Mission Settings")]
         [Tooltip("For KillZombies: total zombies to kill")]

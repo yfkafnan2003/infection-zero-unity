@@ -755,7 +755,7 @@ PrefabInstance:
     - target: {fileID: 6975527115693929293, guid: ae38685839f81fd42b66e0f3825f5ba1, type: 3}
       propertyPath: gunAnimator
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 6185535344894277883}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 2236799233663345727, guid: ae38685839f81fd42b66e0f3825f5ba1, type: 3}

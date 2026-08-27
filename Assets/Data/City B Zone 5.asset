@@ -15,10 +15,10 @@ MonoBehaviour:
   poiName: City B Zone 5
   poiIcon: {fileID: 21300000, guid: 0424de328bdb2ab43b1cf2414db6edad, type: 3}
   levelScene: City B Zone
-  poiType: 0
+  poiType: 6
   requiredPlayerLevel: 1
   difficultyLevel: 10
-  baseZombieHealth: 60
+  baseZombieHealth: 70
   healthMultiplier: 1
   zombieDamage: 10
   boxesToCollect: 3
@@ -26,12 +26,13 @@ MonoBehaviour:
   maxZombies: 20
   spawnInterval: 3
   initialSpawnDelay: 0
+  zombieRushSpawnInterval: 1
   zombieAmount: 30
   zombiesToSpawn: 10
   surviveTime: 180
   baseMoneyReward: 200
   baseXPReward: 300
-  protectTime: 60
+  protectTime: 180
   doorHealth: 500
   zombieDoorDamage: 10
   doorRegenRate: 10

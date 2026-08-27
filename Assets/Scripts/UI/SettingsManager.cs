@@ -18,8 +18,8 @@ public class SettingsManager : MonoBehaviour
     [Header("Sensitivity")]
     public Slider normalSensitivitySlider;
     public Slider aimSensitivitySlider;
-    public float normalSensitivity = 0.2362331f;
-    public float aimSensitivity = 0.2362331f;
+    public float normalSensitivity = 0.4f;
+    public float aimSensitivity = 0.4f;
     
     [Header("UI Sounds")]
     public AudioSource uiAudioSource;
@@ -142,8 +142,8 @@ public class SettingsManager : MonoBehaviour
     public void LoadSettings()
     {
         // Load sensitivity
-        currentNormalSensitivity = PlayerPrefs.GetFloat("NormalSensitivity", 0.2362331f);
-        currentAimSensitivity = PlayerPrefs.GetFloat("AimSensitivity", 0.2362331f);
+        currentNormalSensitivity = PlayerPrefs.GetFloat("NormalSensitivity", 0.4f);
+        currentAimSensitivity = PlayerPrefs.GetFloat("AimSensitivity", 0.4f);
         
         // Load audio (0-1 range) with safe defaults
         float masterVol = PlayerPrefs.GetFloat("MasterVolume", 0.75f);
@@ -206,6 +206,12 @@ public class SettingsManager : MonoBehaviour
         // Re-apply settings
         LoadSettings();
         ApplySettings();
+        PlayerLook[] looks = FindObjectsOfType<PlayerLook>(true);
+
+        foreach (PlayerLook look in looks)
+        {
+            look.SetSensitivity(GetNormalSensitivity());
+        }
     }
     void FindSlidersInScene()
     {

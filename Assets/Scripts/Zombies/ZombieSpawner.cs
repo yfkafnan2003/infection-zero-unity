@@ -23,8 +23,11 @@ public class ZombieSpawner : MonoBehaviour
     public float spawnRadius = 15f;
     public LayerMask groundLayer;
     public Transform playerTransform;
-    private int currentRoundHealth = 50;
 
+    private int currentRoundHealth = 50;
+    [Header("Zombie Rush")]
+    public bool zombieRush = false;
+    public float zombieRushMultiplier = 0.5f; // 0.5 = twice as fast
     [Header("Wave Settings")]
     public bool waveBasedSpawning = false;
     public int zombiesPerWave = 10;
@@ -140,7 +143,34 @@ public class ZombieSpawner : MonoBehaviour
             }
         }
     }
-    
+    public void StartZombieRush()
+    {
+        if (zombieRush)
+            return;
+
+        zombieRush = true;
+
+        LevelManager lm = FindObjectOfType<LevelManager>();
+
+        if (lm != null && lm.currentPOIData != null)
+        {
+            spawnInterval = lm.currentPOIData.zombieRushSpawnInterval;
+        }
+
+        StartCoroutine(RestartSpawnerNextFrame());
+
+        Debug.Log("Zombie Rush Started! New Interval = " + spawnInterval);
+    }
+
+    IEnumerator RestartSpawnerNextFrame()
+    {
+        yield return null;   // wait one frame
+
+        if (spawnCoroutine != null)
+            StopCoroutine(spawnCoroutine);
+
+        spawnCoroutine = StartCoroutine(SpawnRoutine());
+    }
     IEnumerator StartNextWave()
     {
         currentWave++;

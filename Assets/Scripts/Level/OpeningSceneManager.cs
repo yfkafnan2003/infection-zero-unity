@@ -9,17 +9,8 @@ public class OpeningSceneManager : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject skipButton;
     
-    [Header("Loading Screen")]
-    public GameObject loadingPanel;
-    public UnityEngine.UI.Slider loadingBar;
-    public TMPro.TextMeshProUGUI loadingText;
-    
     [Header("Scene to Load")]
-    public string mapSceneName = "MapScene";
-    
-    [Header("Fake Loading Settings")]
-    public float minLoadTime = 2f;
-    public float maxLoadTime = 4f;
+    public string mapSceneName = "IntroScene";
     
     private bool videoComplete = false;
     private bool skipPressed = false;
@@ -28,9 +19,6 @@ public class OpeningSceneManager : MonoBehaviour
     {
         if (skipButton != null)
             skipButton.SetActive(false);
-        
-        if (loadingPanel != null)
-            loadingPanel.SetActive(false);
         
         // Setup video player
         if (videoPlayer != null)
@@ -43,8 +31,7 @@ public class OpeningSceneManager : MonoBehaviour
         }
         else
         {
-            // No video, go directly to loading
-            StartCoroutine(FakeLoadingThenLoadScene());
+            SceneManager.LoadScene(mapSceneName);
         }
     }
     
@@ -58,10 +45,11 @@ public class OpeningSceneManager : MonoBehaviour
     void OnVideoFinished(VideoPlayer vp)
     {
         videoComplete = true;
-        if (skipButton != null)
+
+        if(skipButton != null)
             skipButton.SetActive(false);
-        
-        StartCoroutine(FakeLoadingThenLoadScene());
+
+        SceneManager.LoadScene(mapSceneName);
     }
     
     public void SkipVideo()
@@ -74,46 +62,4 @@ public class OpeningSceneManager : MonoBehaviour
         }
     }
     
-    IEnumerator FakeLoadingThenLoadScene()
-    {
-        // Show loading panel
-        if (loadingPanel != null)
-            loadingPanel.SetActive(true);
-        
-        // Random load time (creates "fake" loading feel)
-        float loadDuration = Random.Range(minLoadTime, maxLoadTime);
-        float elapsedTime = 0f;
-        
-        while (elapsedTime < loadDuration)
-        {
-            elapsedTime += Time.deltaTime;
-            float progress = elapsedTime / loadDuration;
-            
-            // Update loading bar
-            if (loadingBar != null)
-                loadingBar.value = progress;
-            
-            // Update loading text with dots animation
-            if (loadingText != null)
-            {
-                int dots = Mathf.FloorToInt(Time.time * 2) % 4;
-                string dotText = new string('.', dots);
-                loadingText.text = $"Loading{dotText}";
-            }
-            
-            yield return null;
-        }
-        
-        // Ensure loading bar is full
-        if (loadingBar != null)
-            loadingBar.value = 1f;
-        
-        if (loadingText != null)
-            loadingText.text = "Loading complete!";
-        
-        yield return new WaitForSeconds(0.5f);
-        
-        // Load the map scene
-        SceneManager.LoadScene(mapSceneName);
-    }
 }
